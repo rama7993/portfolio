@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.heading {
+  padding: 20px 10px 10px;
+  width: auto;
+  font-weight: 400;
+
+  span {
+    font-size: 40px;
+    color: #2857a4;
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.timeline {
+  position: relative;
+  width: 75%;
+}
+
+.timeline-box {
+  position: relative;
+  margin: 5px;
+  width: 40%;
+  left: 5%;
+  min-height: 150px;
+}
+
+.timeline-box:nth-child(2n) {
+  left: 53%;
+}
+
+.timeline-divider {
+  position: absolute;
+  height: 75%;
+  width: 0;
+  top: 8%;
+  left: 50%;
+  border: 3px dashed rgb(46, 173, 196);
+}
+
+.timeline-traveller {
+  position: sticky;
+  top: 5%;
+  transform: rotate(90deg);
+  color: rgb(36, 15, 15);
+  z-index: 2;
+}
+
+.timeline-box:nth-child(2n+1):after {
+  position: absolute;
+  top: 30%;
+  right: -13.5%;
+  content: '';
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: red;
+  z-index: 1;
+}
+
+
+.timeline-box:nth-child(2n):after {
+  position: absolute;
+  top: 30%;
+  left: -9%;
+  content: '';
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: red;
+  z-index: 1;
+}
+
+.mb75px{
+  margin-bottom: 75px;
+}

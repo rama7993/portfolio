@@ -1,0 +1,72 @@
+
+
+.skills-display {
+  width: 70%;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.skill-progress {
+  width: 7rem;
+  height: 1.4rem;
+  border-radius: 1rem;
+  background-color: lightgrey;
+}
+
+.ninety {
+  width: 90%;
+  height: inherit;
+  background-color: blue;
+}
+
+.eighty-five {
+  width: 85%;
+  height: inherit;
+  background-color: orangered;
+}
+
+.eighty {
+  width: 80%;
+  height: inherit;
+  background-color: rgb(189, 12, 145);
+}
+
+.seventy-five {
+  width: 75%;
+  height: inherit;
+  background-color: rgb(78, 78, 77);
+}
+
+.seventy {
+  width: 70%;
+  height: inherit;
+  background-color: rgb(24, 7, 1);
+}
+
+.sixty {
+  width: 60%;
+  height: inherit;
+  background-color: rgb(9, 88, 141);
+}
+
+.sixty-five {
+  width: 65%;
+  height: inherit;
+  background-color: rgb(83, 138, 38);
+}
+
+.skill-name {
+  span {
+    color: white;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+}
+
+.skill-progress>div {
+  border-radius: 20px 0px 0px 20px;
+}

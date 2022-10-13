@@ -1,0 +1,17 @@
+.fa-facebook:hover,
+.fa-twitter:hover {
+  color: blue;
+}
+
+.fa-linkedin:hover {
+  color: rgb(22, 80, 236);
+}
+
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-linkedin:hover,
+.fa-github:hover {
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 1px 1px 10px 2px lightgrey;
+}
