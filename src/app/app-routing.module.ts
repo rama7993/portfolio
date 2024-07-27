@@ -3,12 +3,10 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  {path:'',component:AppLayoutComponent}
-];
+const routes: Routes = [{ path: '', component: AppLayoutComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

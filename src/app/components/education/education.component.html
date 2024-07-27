@@ -4,7 +4,7 @@
     <span>Education</span>
   </h1>
   <div class="timeline">
-    <div class="timeline-box">
+    <div *ngFor="let educationItem of educationItems" class="timeline-box">
       <div class="timeline-container">
         <div class="timeline-logo">
           <img
@@ -12,67 +12,11 @@
             style="height: 80px; width: 160px"
           />
         </div>
-        <h3 class="education-degree">Degree</h3>
-        <h4 class="education-college-name">College Name</h4>
-        <h5 class="education-duration">Month YYYY - Month YYYY</h5>
-
+        <h3 class="education-degree">{{ educationItem.degree }}</h3>
+        <h4 class="education-college-name">{{ educationItem.college }}</h4>
+        <h5 class="education-duration">{{ educationItem.duration }}</h5>
         <p class="education-description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aut
-          iusto id voluptatibus at ullam necessitatibus ipsa.
-        </p>
-      </div>
-    </div>
-    <div class="timeline-box">
-      <div class="timeline-container">
-        <div class="timeline-logo">
-          <img
-            src="../../../assets/images/college.jpg"
-            style="height: 80px; width: 160px"
-          />
-        </div>
-        <h3 class="education-degree">Degree</h3>
-        <h4 class="education-college-name">College Name</h4>
-        <h5 class="education-duration">Month YYYY - Month YYYY</h5>
-
-        <p class="education-description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aut
-          iusto id voluptatibus at ullam necessitatibus ipsa.
-        </p>
-      </div>
-    </div>
-    <div class="timeline-box">
-      <div class="timeline-container">
-        <div class="timeline-logo">
-          <img
-            src="../../../assets/images/college.jpg"
-            style="height: 80px; width: 160px"
-          />
-        </div>
-        <h3 class="education-degree">Degree</h3>
-        <h4 class="education-college-name">College Name</h4>
-        <h5 class="education-duration">Month YYYY - Month YYYY</h5>
-
-        <p class="education-description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aut
-          iusto id voluptatibus at ullam necessitatibus ipsa.
-        </p>
-      </div>
-    </div>
-    <div class="timeline-box">
-      <div class="timeline-container">
-        <div class="timeline-logo">
-          <img
-            src="../../../assets/images/college.jpg"
-            style="height: 80px; width: 160px"
-          />
-        </div>
-        <h3 class="education-degree">Degree</h3>
-        <h4 class="education-college-name">College Name</h4>
-        <h5 class="education-duration">Month YYYY - Month YYYY</h5>
-
-        <p class="education-description">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aut
-          iusto id voluptatibus at ullam necessitatibus ipsa.
+          {{ educationItem.description }}
         </p>
       </div>
     </div>

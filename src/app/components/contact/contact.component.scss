@@ -1,6 +1,22 @@
-.mb45px{
-  margin-bottom: 45px;
+#contact .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-button{
-  margin-top: 10px;
+
+#contact .form-group {
+  margin-bottom: 1rem;
+}
+
+#contact .btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+#contact .btn:hover {
+  background-color: #45a049;
+}
+
+agm-map {
+  height: 400px;
 }

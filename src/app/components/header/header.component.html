@@ -1,38 +1,79 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav
+  class="navbar navbar-expand-lg fixed-top"
+  [ngClass]="['bg-' + theme, 'navbar-' + theme]"
+>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Nav</a>
+    <a class="navbar-brand" href="#">Portfolio</a>
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#contact">Contact</a>
-        </li>
-      </ul>
+    <div
+      class="offcanvas offcanvas-end"
+      [ngClass]="['bg-' + theme]"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Portfolio</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#about"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <div class="toggle-btn-container">
+              <button
+                *ngIf="theme === 'light'"
+                (click)="toggle()"
+                [ngClass]="['btn-' + theme]"
+                class="btn btn-theme"
+              >
+                <i class="pi pi-moon"></i>
+              </button>
+              <button
+                *ngIf="theme === 'dark'"
+                (click)="toggle()"
+                class="btn btn-theme"
+                [ngClass]="['btn-' + theme]"
+              >
+                <i class="pi pi-sun"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

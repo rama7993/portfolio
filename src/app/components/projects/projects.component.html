@@ -1,55 +1,20 @@
 <section id="projects">
-  <div class="heading mb75px">
-    <span> <i class="fas fa-th-list"></i></span>
+  <div class="heading mb-4">
+    <span><i class="fas fa-th-list"></i></span>
     <span>Projects</span>
   </div>
-  <div class="conatiner d-flex flex-wrap justify-content-around">
-    <div class="image-container">
-      <img src="../../../assets/images/projects.jpg" alt="" />
-      <div class="details">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-          officiis voluptates minus, porro cum, voluptate commodi, sapiente
-          totam quae atque sequi saepe excepturi dicta quos consectetur a ad
-          nobis quia?
-        </p>
-        <button class="btn btn-primary">Project 1</button>
-      </div>
-    </div>
-    <div class="image-container">
-      <img src="../../../assets/images/projects.jpg" alt="" />
-      <div class="details">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-          officiis voluptates minus, porro cum, voluptate commodi, sapiente
-          totam quae atque sequi saepe excepturi dicta quos consectetur a ad
-          nobis quia?
-        </p>
-        <button class="btn btn-primary">Project 2</button>
-      </div>
-    </div>
-    <div class="image-container">
-      <img src="../../../assets/images/projects.jpg" alt="" />
-      <div class="details">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-          officiis voluptates minus, porro cum, voluptate commodi, sapiente
-          totam quae atque sequi saepe excepturi dicta quos consectetur a ad
-          nobis quia?
-        </p>
-        <button class="btn btn-primary">Project 3</button>
-      </div>
-    </div>
-    <div class="image-container">
-      <img src="../../../assets/images/projects.jpg" alt="" />
-      <div class="details">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
-          officiis voluptates minus, porro cum, voluptate commodi, sapiente
-          totam quae atque sequi saepe excepturi dicta quos consectetur a ad
-          nobis quia?
-        </p>
-        <button class="btn btn-primary">Project 4</button>
+  <div class="container d-flex flex-wrap justify-content-around">
+    <div class="project-card" *ngFor="let project of projects">
+      <div class="image-container">
+        <img [src]="project.imageUrl" alt="Project Image" />
+        <div class="overlay p-2">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <p><strong>Tech Stack:</strong> {{ project.techStack }}</p>
+          <a [href]="project.link" target="_blank" class="btn btn-primary"
+            >Visit Website</a
+          >
+        </div>
       </div>
     </div>
   </div>

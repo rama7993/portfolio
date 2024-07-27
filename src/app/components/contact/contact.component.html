@@ -1,39 +1,74 @@
 <section id="contact">
-  <h1 class="heading mb45px">
+  <h1 class="heading mb-4">
     <span>
       <i class="far fa-address-card"></i>
     </span>
     <span> Contact </span>
   </h1>
   <div class="container">
-      <form>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Your Name"
-          class="form-control"
-        />
-
-        <input
-          type="email"
-          name="mail"
-          id="mail"
-          placeholder="Your Email"
-          class="form-control"
-        />
-
-        <textarea
-          name=""
-          id=""
-          cols="40"
-          rows="2"
-          placeholder="Message"
-          class="form-control"
-        ></textarea>
-        <div class="button text-center">
-          <button class="btn btn-primary">Send Message</button>
-        </div>
-      </form>
+    <div class="row">
+      <div class="col-md-12">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="Your Name"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Your Email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="text"
+              id="phone"
+              formControlName="phone"
+              placeholder="Your Phone Number"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              cols="40"
+              rows="5"
+              placeholder="Message"
+              class="form-control"
+            ></textarea>
+          </div>
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              id="consent"
+              formControlName="consent"
+              class="form-check-input"
+            />
+            <label for="consent" class="form-check-label"
+              >I allow this website to store my submission so they can respond
+              to my inquiry.</label
+            >
+          </div>
+          <div class="button text-center">
+            <button class="btn btn-primary" [disabled]="!contactForm.valid">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </section>

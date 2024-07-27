@@ -1,92 +1,18 @@
-<section id="skills" class="mb75px">
-  <h1 class="heading mb75px">
-    <span class=""> <i class="fa-solid fa-chalkboard-user"></i></span>
+<section id="skills" class="skills-section">
+  <h1 class="heading">
+    <span><i class="fa-solid fa-chalkboard-user"></i></span>
     <span>SKILLS</span>
   </h1>
 
   <div class="skills-display">
-    <div class="skill-progress">
-      <div class="ninety">
+    <div *ngFor="let skill of skills" class="skill-progress">
+      <div
+        class="progress-bar"
+        [style.width.%]="skill.percent"
+        [style.backgroundColor]="skill.color"
+      >
         <div class="skill-name">
-          <span>C++</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="eighty-five">
-        <div class="skill-name">
-          <span>Java</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="seventy-five">
-        <div class="skill-name">
-          <span>C</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="eighty">
-        <div class="skill-name">
-          <span>Python</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-progress">
-      <div class="ninety">
-        <div class="skill-name">
-          <span>HTML</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="seventy-five">
-        <div class="skill-name">
-          <span>MySQL</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="sixty">
-        <div class="skill-name">
-          <span>CSS</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="seventy-five">
-        <div class="skill-name">
-          <span>JavaScript</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="eighty-five">
-        <div class="skill-name">
-          <span>TypeScript</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-progress">
-      <div class="sixty">
-        <div class="skill-name">
-          <span>Bootstrap</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-progress">
-      <div class="sixty-five">
-        <div class="skill-name">
-          <span>Angular</span>
+          <span>{{ skill.name }}</span>
         </div>
       </div>
     </div>

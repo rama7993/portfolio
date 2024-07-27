@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/variables";
+@import "primeicons/primeicons.css";
 
+body.dark {
+  @include darken();
+}
+body.light {
+  @include lighten();
+}
 
 * {
   margin: 0;
@@ -60,27 +68,26 @@ section {
   transform: rotate(90deg);
   color: rgb(36, 15, 15);
   z-index: 2;
-  color:grey;
+  color: grey;
 }
 
-.timeline-box:nth-child(2n+1):after {
+.timeline-box:nth-child(2n + 1):after {
   position: absolute;
   top: 30%;
   right: -13.5%;
-  content: '';
+  content: "";
   border-radius: 50%;
   width: 0.5rem;
   height: 0.5rem;
   background-color: red;
   z-index: 1;
 }
-
 
 .timeline-box:nth-child(2n):after {
   position: absolute;
   top: 30%;
   left: -9%;
-  content: '';
+  content: "";
   border-radius: 50%;
   width: 0.5rem;
   height: 0.5rem;
@@ -88,6 +95,6 @@ section {
   z-index: 1;
 }
 
-.mb75px{
+.mb75px {
   margin-bottom: 75px;
 }

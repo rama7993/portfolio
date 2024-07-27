@@ -1,11 +1,16 @@
-<footer id="footer">
-  <div class="container text-center">
-    <a class="btn " href="http://" target="_blank"><i class="fa-brands fa-2x fa-linkedin"></i></a>
-    <a class="btn " href="http://" target="_blank"><i class="fa-brands fa-2x fa-twitter"></i></a>
-    <a class="btn " href="http://" target="_blank"><i class="fa-brands fa-2x fa-facebook"></i></a>
-    <a class="btn " href="http://" target="_blank"><i class="fa-brands fa-2x fa-github"></i></a>
+<footer id="footer" class="bg-dark text-white pt-4">
+  <div class="container d-flex justify-content-center">
+    <a
+      *ngFor="let link of socialLinks"
+      class="btn btn-outline-light rounded-circle m-2"
+      [href]="link.url"
+      target="_blank"
+      [ngStyle]="{ '--hover-color': link.hoverColor }"
+    >
+      <i [class]="link.iconClass + ' fa-2x'"></i>
+    </a>
   </div>
-  <div class="text-center text-muted">
-    <!-- <p>&copy; All rights reserved.</p> -->
+  <div class="container text-center text-muted mt-4">
+    <p>&copy; {{ currentYear }} All rights reserved.</p>
   </div>
 </footer>

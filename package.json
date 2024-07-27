@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^3.0.0-beta.0",
     "@angular/animations": "^14.1.0",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
@@ -30,6 +31,7 @@
     "ng-snotify": "^9.0.1",
     "ngx-spinner": "^14.0.0",
     "ngx-tabset": "^2.2.0",
+    "primeicons": "^7.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

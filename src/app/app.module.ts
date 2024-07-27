@@ -14,32 +14,42 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 
-import { NgxSpinnerModule } from "ngx-spinner";
 import { ProjectsComponent } from './components/projects/projects.component';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MODE_STORAGE_SERVICE,
+  ModeLocalStorageService,
+} from 'src/services/mode-storage/mode-storage.service';
+import { ModeToggleService } from 'src/services/mode-toggle/mode-toggle.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-      AppLayoutComponent,
-      HeaderComponent,
-      FooterComponent,
-      IntroComponent,
-      SkillsComponent,
-      EducationComponent,
-      ExperienceComponent,
-      AboutComponent,
-      ContactComponent,
-      ProjectsComponent,
-   ],
+    AppLayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    IntroComponent,
+    SkillsComponent,
+    EducationComponent,
+    ExperienceComponent,
+    AboutComponent,
+    ContactComponent,
+    ProjectsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    NgxSpinnerModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ModeToggleService,
+    {
+      provide: MODE_STORAGE_SERVICE,
+      useClass: ModeLocalStorageService,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
