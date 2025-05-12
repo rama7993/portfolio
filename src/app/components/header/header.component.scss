@@ -1,0 +1,66 @@
+.navbar {
+  box-shadow: 0 4px 6px var(--shadow-color);
+  background-color: var(--surface-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 30 30'%3E%3Cpath stroke='%23ccc' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  .nav-link {
+    position: relative;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: var(--primary-color);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: var(--primary-color);
+      width: 0;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .toggle-btn-container {
+    button {
+      font-size: 1.2em;
+      border: none;
+      background: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.offcanvas {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+
+  .offcanvas-title {
+    color: var(--text-color);
+  }
+
+  .btn-close {
+    color: var(--text-color);
+  }
+}

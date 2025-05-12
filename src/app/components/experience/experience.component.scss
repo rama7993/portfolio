@@ -1,0 +1,66 @@
+#experience {
+  .experience-item {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: var(--surface-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 15px var(--shadow-color);
+    }
+
+    .experience-logo {
+      img {
+        width: 100%;
+        max-width: 10rem;
+        border: 5px solid var(--border-color);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: rotate(10deg);
+        }
+      }
+    }
+
+    .experience-details {
+      h3 {
+        font-size: 1.8rem;
+        color: var(--text-color);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+
+      h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        color: var(--muted-text-color);
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--muted-text-color);
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+
+        li {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: var(--text-color);
+          position: relative;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

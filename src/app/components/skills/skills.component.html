@@ -1,0 +1,12 @@
+<section id="skills" class="skills-section">
+  <div class="heading mb-4 text-center">
+    <span><i class="fa-solid fa-chalkboard-user"></i></span>
+    <span> Skills</span>
+  </div>
+  <div class="skills-display">
+    <div *ngFor="let skill of skills" class="skill-card">
+      <img [src]="skill.image" [alt]="skill.name" class="skill-image" />
+      <span class="skill-name">{{ skill.name }}</span>
+    </div>
+  </div>
+</section>

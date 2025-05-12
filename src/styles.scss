@@ -1,0 +1,41 @@
+@import "./styles/variables";
+@import "primeicons/primeicons.css";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body.dark {
+  @include dark-theme();
+}
+body.light {
+  @include light-theme();
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+
+  i {
+    margin-right: 0.5rem;
+    color: #9b51e0;
+  }
+
+  span:last-child {
+    color: var(--text-color);
+    font-weight: bold;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

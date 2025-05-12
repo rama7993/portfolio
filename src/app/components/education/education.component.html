@@ -1,0 +1,32 @@
+<section id="education" class="container">
+  <h1 class="heading mb75px">
+    <span><i class="fas fa-graduation-cap"></i></span>
+    <span>Education</span>
+  </h1>
+
+  <div
+    class="education-card"
+    *ngFor="let item of educationItems; let i = index"
+  >
+    <div class="date">{{ item.date }}</div>
+    <i class="icon pi" [ngClass]="item.icon"></i>
+    <div class="content">
+      <div class="logo">
+        <img
+          [src]="item.image"
+          class="img-fluid"
+          alt="Education Logo"
+          style="height: 80px; width: 160px"
+        />
+      </div>
+      <h2>{{ item.college }}</h2>
+      <h5>{{ item.duration }}</h5>
+      <p>{{ item.description }}</p>
+      <p *ngIf="item.CGPA">CGPA: {{ item.CGPA }}</p>
+      <p *ngIf="item.Percentage">Percentage: {{ item.Percentage }}</p>
+      <p *ngIf="item.driveLink">
+        <a [href]="item.driveLink" target="_blank">View Certificate</a>
+      </p>
+    </div>
+  </div>
+</section>

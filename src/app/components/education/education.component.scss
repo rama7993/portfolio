@@ -1,0 +1,72 @@
+#education {
+  .education-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px var(--shadow-color);
+    }
+
+    .date {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+      flex: 1 1 100px;
+      min-width: 100px;
+    }
+
+    .icon {
+      flex: 1 1 50px;
+      font-size: 2rem;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
+    .content {
+      flex: 1 1 calc(100% - 150px);
+      padding: 1rem;
+
+      .logo img {
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        color: var(--text-color);
+      }
+
+      h5 {
+        font-size: 1rem;
+        color: var(--muted-text-color);
+        margin: 0.5rem 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: var(--muted-text-color);
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+#footer .btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  &:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: scale(1.1);
+  }
+}
+
+#footer .btn:hover i {
+  color: var(--hover-color);
+}
+
+.bg-dark {
+  background-color: #343a40 !important;
+}

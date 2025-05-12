@@ -1,0 +1,51 @@
+<section id="projects" class="container">
+  <div class="heading mb-4 text-center">
+    <span><i class="pi pi-objects-column"></i></span>
+    <span>Projects</span>
+  </div>
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 mb-4"
+      *ngFor="let project of projects; let i = index"
+    >
+      <div class="project-card card h-100">
+        <div class="image-container">
+          <img
+            [src]="project.imageUrl"
+            alt="Project Image"
+            class="card-img-top"
+          />
+          <div class="overlay">
+            <h3>{{ project.name }}</h3>
+            <div class="icons">
+              <a [href]="project.githubLink" target="_blank" class="btn-icon"
+                ><i class="pi pi-github"></i
+              ></a>
+              <a [href]="project.link" target="_blank" class="btn-icon"
+                ><i class="pi pi-external-link"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content card-body">
+          <h3 class="card-title">{{ project.name }}</h3>
+          <p class="card-text">{{ project.description }}</p>
+          <p class="card-text">
+            <strong>Tech Stack:</strong> {{ project.techStack }}
+          </p>
+          <div class="links">
+            <a [href]="project.link" target="_blank" class="btn btn-primary">
+              Website</a
+            >
+            <a
+              [href]="project.githubLink"
+              target="_blank"
+              class="btn btn-secondary"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

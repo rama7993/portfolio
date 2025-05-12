@@ -1,0 +1,31 @@
+<section id="experience" class="container py-5">
+  <h1 class="heading mb-5 text-center">
+    <span><i class="fas fa-briefcase"></i></span>
+    <span>Work Experience</span>
+  </h1>
+
+  <div
+    *ngFor="let exp of experiences"
+    class="experience-item row align-items-center mb-5"
+    [@fadeInAnimation]
+  >
+    <div class="experience-logo col-md-3 text-center">
+      <img
+        [src]="exp.logo"
+        alt="{{ exp.companyName }} Logo"
+        class="img-fluid rounded-circle shadow"
+      />
+    </div>
+    <div class="experience-details col-md-9">
+      <h3 class="experience-designation">{{ exp.designation }}</h3>
+      <h4 class="experience-company-name text-primary">
+        {{ exp.companyName }}
+      </h4>
+      <h5 class="experience-duration text-muted">{{ exp.duration }}</h5>
+      <p class="experience-description">{{ exp.description }}</p>
+      <ul class="experience-detail-list">
+        <li *ngFor="let detail of exp.details">{{ detail }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

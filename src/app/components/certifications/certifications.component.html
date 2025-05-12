@@ -1,0 +1,23 @@
+<section id="certifications" class="certifications-section container my-5">
+  <div class="heading text-center mb-5">
+    <span class="icon-container">
+      <i class="pi pi-trophy"></i>
+    </span>
+    <h2 class="title">Certifications</h2>
+  </div>
+  <div class="certifications-list row">
+    <div class="col-md-4 mb-4" *ngFor="let certification of certifications">
+      <div class="certification-card shadow-sm p-3">
+        <h5 class="certification-title mb-2">{{ certification.name }}</h5>
+        <p class="certification-platform">{{ certification.platform }}</p>
+        <a
+          [href]="certification.link"
+          target="_blank"
+          class="certification-link"
+        >
+          View Certificate <i class="pi pi-external-link"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+.back-image {
+  background-image: url("https://rama7993.github.io/portfolio/assets/images/intro-background.jpg");
+  height: 70vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 10rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.back-text {
+  text-align: center;
+  position: absolute !important;
+  width: 45%;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.title {
+  font-size: 50px;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 10px 0;
+}
+
+.btn {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .back-text {
+    padding: 1rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 760px) {
+  .back-text {
+    padding: 1rem;
+    width: 75%;
+  }
+}
+
+@media (max-width: 992px) {
+  .back-text {
+    padding: 1rem;
+    width: 60%;
+  }
+}

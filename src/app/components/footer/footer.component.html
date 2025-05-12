@@ -1,0 +1,17 @@
+<footer id="footer" class="bg-dark text-white pt-4">
+  <div class="container d-flex justify-content-center">
+    <a
+      *ngFor="let link of socialLinks"
+      class="btn btn-outline-light rounded-circle m-2"
+      [href]="link.url"
+      target="_blank"
+      [title]="link.name"
+      [ngStyle]="{ '--hover-color': link.hoverColor }"
+    >
+      <i [class]="link.iconClass" style="font-size: 1.5rem"></i>
+    </a>
+  </div>
+  <div class="footer-content text-center text-white mt-4">
+    <p>&copy; {{ currentYear }} All rights reserved.</p>
+  </div>
+</footer>
