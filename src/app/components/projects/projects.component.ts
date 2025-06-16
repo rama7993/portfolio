@@ -9,6 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class ProjectsComponent implements OnInit {
   projects = [
     {
+      name: 'QuickChat',
+      imageUrl: './assets/images/projects/quickchat.png',
+      description:
+        'Real-time chat application enabling user-to-user messaging with authentication, route protection, and HTTP interceptors. Includes features like date-grouped message history, user profile management, and live typing indicators via Socket.io. Backend powered by Node.js with persistent data storage in MongoDB.',
+      techStack: 'Angular, Node.js, Express, MongoDB, Socket.io',
+      githubLink: 'https://github.com/rama7993/QuickChat-Frontend',
+      link: 'https://quick-chat-fe.vercel.app/login',
+    },
+    {
       name: 'Edairy',
       imageUrl: './assets/images/projects/eDairy.png',
       description:
