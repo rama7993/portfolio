@@ -1,62 +1,69 @@
-<nav class="navbar navbar-expand-lg fixed-top" [ngClass]="theme">
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar"
-      aria-controls="offcanvasNavbar"
-      aria-label="Toggle navigation"
+<nav
+  class="navbar navbar-expand-lg fixed-top"
+  [ngClass]="{ scrolled: isScrolled }"
+  [class]="theme"
+>
+  <div class="container">
+    <a
+      class="navbar-brand"
+      href="#home"
+      (click)="scrollToSection('home'); setActive(navItems[0])"
     >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="offcanvas offcanvas-end"
-      [ngClass]="theme"
-      tabindex="-1"
-      id="offcanvasNavbar"
-      aria-labelledby="offcanvasNavbarLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Portfolio</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <span class="brand-text">Portfolio</span>
+    </a>
+
+    <div class="navbar-nav-container">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item" *ngFor="let item of navItems">
             <a
               class="nav-link"
-              [href]="item.link"
               [attr.aria-current]="item.active ? 'page' : null"
               [ngClass]="{ active: item.active }"
-              (click)="setActive(item)"
+              (click)="scrollToSection(item.link.substring(1)); setActive(item)"
             >
-              {{ item.name }}
+              <span class="nav-text">{{ item.name }}</span>
             </a>
           </li>
         </ul>
       </div>
-    </div>
-    <div class="toggle-btn-container">
-      <button
-        *ngIf="theme === 'light'"
-        (click)="toggle()"
-        class="btn btn-theme"
-      >
-        <i class="pi pi-moon"></i>
-      </button>
-      <button
-        *ngIf="theme === 'dark'"
-        (click)="toggle()"
-        class="btn btn-theme"
-      >
-        <i class="pi pi-sun"></i>
-      </button>
+
+      <div class="navbar-controls">
+        <!-- Theme switch always visible -->
+        <button
+          *ngIf="theme === 'light'"
+          (click)="toggle()"
+          class="theme-toggle"
+          title="Switch to Dark Mode"
+        >
+          <i class="pi pi-moon"></i>
+        </button>
+        <button
+          *ngIf="theme === 'dark'"
+          (click)="toggle()"
+          class="theme-toggle"
+          title="Switch to Light Mode"
+        >
+          <i class="pi pi-sun"></i>
+        </button>
+
+        <!-- Mobile menu toggle -->
+        <button
+          class="mobile-toggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>

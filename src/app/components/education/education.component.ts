@@ -15,7 +15,7 @@ export class EducationComponent implements OnInit {
       duration: 'August 2018 - June 2022',
       icon: 'pi-graduation-cap',
       description:
-        'Graduated with a comprehensive understanding of computer science principles, specializing in software development and problem-solving. Actively participated in technical projects and activities that honed both my academic knowledge and practical skills.',
+        'Graduated with a comprehensive understanding of computer science principles, specializing in software development and problem-solving. Actively participated in technical projects and activities that enhanced both my academic knowledge and practical skills.',
       CGPA: '9.06',
       image: './assets/images/education/university.jpg',
       driveLink:
@@ -28,7 +28,7 @@ export class EducationComponent implements OnInit {
       duration: 'May 2016 - June 2018',
       icon: 'pi-building-columns',
       description:
-        'Studied Mathematics, Physics, and Chemistry, achieving excellent academic results. This period sharpened my analytical skills and deepened my understanding of fundamental scientific concepts.',
+        'Studied Mathematics, Physics, and Chemistry, achieving excellent academic results. This period enhanced my analytical skills and deepened my understanding of fundamental scientific concepts.',
       Percentage: '97.1%',
       image: './assets/images/education/college.jpg',
       driveLink:

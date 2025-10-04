@@ -23,6 +23,7 @@ import {
 import { ModeToggleService } from '../services/mode-toggle/mode-toggle.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProjectsComponent,
     CertificationsComponent,
     SkillsComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

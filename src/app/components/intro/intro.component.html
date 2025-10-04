@@ -1,13 +1,43 @@
-<section class="back-image">
-  <div class="overlay"></div>
-  <div class="back-text d-flex flex-column align-items-center">
-    <h1 class="title">Rama Koti</h1>
-    <h3 class="subtitle">Frontend Developer</h3>
-    <button
-      class="btn btn-primary d-flex gap-2 align-items-center"
-      (click)="downloadResume()"
-    >
-      <i class="pi pi-cloud-download"></i> Resume
-    </button>
+<section class="hero-section" id="home">
+  <div class="particles-container" id="particles-js"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <div class="hero-text">
+      <h1 class="hero-title" data-aos="fade-right" data-aos-delay="200">
+        Hi, I'm <span class="highlight">Rama Koti Reddy</span>
+      </h1>
+      <h2 class="hero-subtitle" data-aos="fade-left" data-aos-delay="400">
+        <span class="typing-text"></span>
+      </h2>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+        Passionate about creating beautiful, functional, and user-friendly web
+        applications using modern technologies and industry best practices.
+      </p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+        <button class="btn btn-primary btn-glow" (click)="downloadResume()">
+          <i class="pi pi-cloud-download"></i> Download Resume
+        </button>
+        <button
+          class="btn btn-outline-primary"
+          (click)="scrollToSection('projects')"
+        >
+          <i class="pi pi-eye"></i> View My Work
+        </button>
+      </div>
+    </div>
+    <div class="hero-image" data-aos="fade-left" data-aos-delay="1000">
+      <div class="profile-card">
+        <div class="profile-image">
+          <img src="assets/images/my-passport-photo.jpg" alt="Rama Koti" />
+        </div>
+        <div class="profile-glow"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+    <div class="scroll-text">Scroll Down</div>
+    <div class="scroll-arrow">
+      <i class="pi pi-angle-down"></i>
+    </div>
   </div>
 </section>

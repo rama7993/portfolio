@@ -25,15 +25,14 @@ export class ExperienceComponent implements OnInit {
       companyName: 'Satisfic',
       duration: 'July 2022 - Present',
       description:
-        'As a Junior Software Developer at Satisfic, I contributed to a variety of projects, developing robust and scalable software solutions. In recognition of my commitment and growth, I was honored with the Rising Star Award in 2023. My role allowed me to work across multiple domains, honing my technical skills and enhancing user experience through collaborative teamwork and continuous learning.',
+        'As a Junior Software Developer at Satisfic, I drive innovation across diverse projects, architecting robust and scalable software solutions that deliver measurable business impact. Recognized for exceptional performance with the Rising Star Award in 2023, I excel in cross-functional collaboration, continuously advancing technical expertise while delivering exceptional user experiences through agile development practices.',
       details: [
-        'Developed and optimized CRM data table features, significantly improving data accessibility, user interaction, and overall system performance, leading to a more intuitive and efficient user experience.',
-        'Designed and implemented dynamic permissions toggling for user groups, enabling granular access control and enhancing both security and operational flexibility within the platform.',
-        'Built and integrated advanced data visualizations for marketing and sales dashboards and reports, empowering leadership with real-time insights into key business metrics. Additionally, authored a comprehensive launch guide to document all implemented modules for team-wide reference and seamless future integrations.',
-        'Customized and integrated secure login, signup, and two-factor authentication (2FA) features using Keycloak, ensuring the highest security standards and improving the platform’s authentication processes.',
-        'Developed and implemented appointment scheduling functionality for lead management, with time zone support, ensuring seamless coordination and efficient management of appointments across regions.',
-        'Collaborated closely in the execution of targeted marketing campaigns, integrating campaign data with the CRM platform to streamline business workflows and enhance data-driven decision-making capabilities.',
-        'Contributed actively in code reviews and agile sprint meetings, driving continuous improvements in development practices and fostering a collaborative environment within the team to ensure timely delivery of high-quality software.',
+        'Architected and optimized CRM data table features, significantly improving data accessibility and user interaction efficiency, resulting in enhanced system performance and streamlined user workflows.',
+        'Engineered dynamic permissions management system for user groups, implementing granular access controls that significantly enhanced platform security while improving operational flexibility and user management efficiency.',
+        'Developed comprehensive data visualization suite for marketing and sales dashboards, delivering real-time business intelligence that enabled data-driven decision making and improved strategic planning efficiency.',
+        'Implemented enterprise-grade authentication system using Keycloak, integrating secure login, signup, and 2FA features that enhanced platform security compliance and reduced authentication-related support tickets.',
+        'Built intelligent appointment scheduling system with multi-timezone support, automating lead management workflows and reducing scheduling conflicts while improving customer engagement.',
+        'Awarded Rising Star Award in 2023 for exceptional performance and contributions to project success, demonstrating a commitment to excellence and continuous improvement in software development practices.',
       ],
     },
   ];
@@ -41,4 +40,28 @@ export class ExperienceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  get experienceStats() {
+    const totalAchievements = this.experiences.reduce((sum, exp) => sum + exp.details.length, 0);
+    const technologies = new Set([
+      'Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'Node.js', 
+      'Keycloak', 'CRM Systems', 'Data Visualization', 'Authentication', 'API Integration',
+      'Git', 'Agile', 'Scrum', 'REST APIs'
+    ]);
+
+    return {
+      companies: this.experiences.length,
+      totalYears: this.calculateTotalYears(),
+      achievements: totalAchievements,
+      technologies: technologies.size
+    };
+  }
+
+  private calculateTotalYears(): string {
+    // This is a simplified calculation - you can enhance this based on your actual experience
+    const startYear = 2022;
+    const currentYear = new Date().getFullYear();
+    const years = currentYear - startYear;
+    return years >= 1 ? `${years}+` : '< 1';
+  }
 }

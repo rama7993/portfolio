@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-footer',
-    templateUrl: './footer.component.html',
-    styleUrls: ['./footer.component.scss'],
-    standalone: false
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+  standalone: false,
 })
 export class FooterComponent implements OnInit {
   currentYear: number = new Date().getFullYear();
@@ -13,13 +13,13 @@ export class FooterComponent implements OnInit {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/rama-koti-reddy-yerram',
-      iconClass: 'fab fa-linkedin',
+      iconClass: 'pi pi-linkedin',
       hoverColor: '#0077b5',
     },
     {
       name: 'HackerRank',
       url: 'https://www.hackerrank.com/profile/ramakotireddy912',
-      iconClass: 'fab fa-hackerrank',
+      iconClass: 'pi pi-code',
       hoverColor: '#00cc99',
     },
     {
@@ -37,7 +37,7 @@ export class FooterComponent implements OnInit {
     {
       name: 'GitHub',
       url: 'https://github.com/rama7993',
-      iconClass: 'fab fa-github',
+      iconClass: 'pi pi-github',
       hoverColor: '#333333',
     },
   ];

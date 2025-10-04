@@ -3,10 +3,10 @@ import { FormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 @Component({
-    selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.scss'],
-    standalone: false
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
+  standalone: false,
 })
 export class ContactComponent implements OnInit {
   contactForm!: UntypedFormGroup;

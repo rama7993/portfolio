@@ -1,15 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import * as AOS from 'aos';
+import Typed from 'typed.js';
 
 @Component({
-    selector: 'app-intro',
-    templateUrl: './intro.component.html',
-    styleUrls: ['./intro.component.scss'],
-    standalone: false
+  selector: 'app-intro',
+  templateUrl: './intro.component.html',
+  styleUrls: ['./intro.component.scss'],
+  standalone: false,
 })
-export class IntroComponent implements OnInit {
+export class IntroComponent implements OnInit, AfterViewInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }
+
+  ngAfterViewInit() {
+    // Initialize typing animation
+    const typed = new Typed('.typing-text', {
+      strings: [
+        'Frontend Developer',
+        'Angular Specialist',
+        'UI/UX Enthusiast',
+        'Full Stack Developer',
+        'Problem Solver',
+      ],
+      typeSpeed: 100,
+      backSpeed: 60,
+      backDelay: 2000,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|',
+    });
+  }
 
   downloadResume() {
     const driveLink =
@@ -25,5 +52,12 @@ export class IntroComponent implements OnInit {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

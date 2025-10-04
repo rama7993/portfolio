@@ -15,6 +15,16 @@ $shadow-light: rgba(0, 0, 0, 0.1);
 $hover-light: rgb(240, 240, 240);
 $overlay-light: rgba(0, 0, 0, 0.05);
 
+// Additional meaningful color variables
+$gradient-primary-start: #667eea;
+$gradient-primary-end: #764ba2;
+$gradient-secondary-start: #4ecdc4;
+$gradient-secondary-end: #3bb5a8;
+$glass-overlay-light: rgba(255, 255, 255, 0.1);
+$glass-overlay-dark: rgba(0, 0, 0, 0.1);
+$error-color: #e74c3c;
+$error-light: rgba(231, 76, 60, 0.1);
+
 // Dark mode colors
 $background-dark: rgb(18, 18, 18);
 $surface-dark: rgb(24, 23, 23);
@@ -49,6 +59,13 @@ $overlay-dark: rgba(255, 255, 255, 0.1);
   --shadow-color: #{$shadow-light};
   --hover-color: #{$hover-light};
   --overlay-color: #{$overlay-light};
+  --gradient-primary-start: #{$gradient-primary-start};
+  --gradient-primary-end: #{$gradient-primary-end};
+  --gradient-secondary-start: #{$gradient-secondary-start};
+  --gradient-secondary-end: #{$gradient-secondary-end};
+  --glass-overlay: #{$glass-overlay-light};
+  --error-color: #{$error-color};
+  --error-light: #{$error-light};
 }
 
 // Mixin for dark mode
@@ -68,6 +85,13 @@ $overlay-dark: rgba(255, 255, 255, 0.1);
   --shadow-color: #{$shadow-dark};
   --hover-color: #{$hover-dark};
   --overlay-color: #{$overlay-dark};
+  --gradient-primary-start: #{$gradient-primary-start};
+  --gradient-primary-end: #{$gradient-primary-end};
+  --gradient-secondary-start: #{$gradient-secondary-start};
+  --gradient-secondary-end: #{$gradient-secondary-end};
+  --glass-overlay: #{$glass-overlay-dark};
+  --error-color: #{$error-color};
+  --error-light: #{$error-light};
 }
 
 // Bootstrap theme variables

@@ -1,62 +1,129 @@
-<section id="contact">
-  <h1 class="heading mb-4">
-    <span><i class="fas fa-address-card"></i></span>
-    <span>Contact</span>
-  </h1>
+<section id="contact" class="contact-section">
+  <div class="heading mb-4 text-center">
+    <span><i class="pi pi-send"></i></span>
+    <span>Get In Touch</span>
+  </div>
+
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div class="contact-content">
+      <div class="contact-info" data-aos="fade-right">
+        <div class="info-card">
+          <h3>Let's Connect!</h3>
+          <p>
+            I'm always interested in new opportunities and exciting projects.
+            Whether you have a question or just want to say hello, I'll do my
+            best to get back to you!
+          </p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="pi pi-envelope"></i>
+              </div>
+              <div class="method-info">
+                <h4>Email</h4>
+                <p>yerramramakotireddy.work&#64;gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="pi pi-phone"></i>
+              </div>
+              <div class="method-info">
+                <h4>Phone</h4>
+                <p>+91 7993720356</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="pi pi-map-marker"></i>
+              </div>
+              <div class="method-info">
+                <h4>Location</h4>
+                <p>Guntur, Andhra Pradesh, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a
+              href="https://github.com/rama7993"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="pi pi-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/rama-koti-reddy-yerram"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="pi pi-linkedin"></i>
+            </a>
+            <a
+              href="https://twitter.com/rama7993"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="pi pi-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container" data-aos="fade-left">
         <form
-          class="contact-form needs-validation"
+          class="contact-form"
           [formGroup]="contactForm"
           (ngSubmit)="onSubmit()"
           novalidate
         >
-          <!-- Name -->
-          <div class="form-group">
-            <label for="name">Name <span class="text-danger">*</span></label>
-            <input
-              type="text"
-              id="name"
-              formControlName="name"
-              class="form-control"
-              [ngClass]="{ 'is-invalid': isFieldInvalid('name') }"
-              placeholder="Your Name"
-              required
-            />
-            <ng-container *ngIf="isFieldInvalid('name')">
-              <div class="invalid-feedback">Name is required.</div>
-            </ng-container>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': isFieldInvalid('name') }"
+                placeholder="Your Name"
+                required
+              />
+              <ng-container *ngIf="isFieldInvalid('name')">
+                <div class="invalid-feedback">Name is required.</div>
+              </ng-container>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': isFieldInvalid('email') }"
+                placeholder="Your Email"
+                required
+              />
+              <ng-container *ngIf="isFieldInvalid('email')">
+                <div class="invalid-feedback">
+                  <small *ngIf="contactForm.get('email')!.hasError('required')"
+                    >Email is required.</small
+                  >
+                  <small *ngIf="contactForm.get('email')!.hasError('email')"
+                    >Enter a valid email address.</small
+                  >
+                </div>
+              </ng-container>
+            </div>
           </div>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label for="email">Email <span class="text-danger">*</span></label>
-            <input
-              type="email"
-              id="email"
-              formControlName="email"
-              class="form-control"
-              [ngClass]="{ 'is-invalid': isFieldInvalid('email') }"
-              placeholder="Your Email"
-              required
-            />
-            <ng-container *ngIf="isFieldInvalid('email')">
-              <div class="invalid-feedback">
-                <small *ngIf="contactForm.get('email')!.hasError('required')"
-                  >Email is required.</small
-                >
-                <small *ngIf="contactForm.get('email')!.hasError('email')"
-                  >Enter a valid email address.</small
-                >
-              </div>
-            </ng-container>
-          </div>
-
-          <!-- Phone -->
           <div class="form-group">
             <label for="phone"
-              >Phone Number <span class="text-danger">*</span></label
+              >Phone Number <span class="required">*</span></label
             >
             <input
               type="text"
@@ -79,18 +146,15 @@
             </ng-container>
           </div>
 
-          <!-- Message -->
           <div class="form-group">
-            <label for="message"
-              >Message <span class="text-danger">*</span></label
-            >
+            <label for="message">Message <span class="required">*</span></label>
             <textarea
               id="message"
               formControlName="message"
               rows="5"
               class="form-control"
               [ngClass]="{ 'is-invalid': isFieldInvalid('message') }"
-              placeholder="Message"
+              placeholder="Tell me about your project or just say hello!"
               required
             ></textarea>
             <ng-container *ngIf="isFieldInvalid('message')">
@@ -98,7 +162,6 @@
             </ng-container>
           </div>
 
-          <!-- Consent -->
           <div class="form-group form-check">
             <input
               type="checkbox"
@@ -110,7 +173,7 @@
             />
             <label for="consent" class="form-check-label">
               I allow this website to store my submission.
-              <span class="text-danger">*</span>
+              <span class="required">*</span>
             </label>
             <ng-container *ngIf="isFieldInvalid('consent')">
               <div class="invalid-feedback">
@@ -119,13 +182,13 @@
             </ng-container>
           </div>
 
-          <!-- Submit Button -->
-          <div class="text-center">
+          <div class="form-submit">
             <button
               type="submit"
               class="btn btn-primary"
               [disabled]="contactForm.invalid"
             >
+              <i class="pi pi-send"></i>
               Send Message
             </button>
           </div>

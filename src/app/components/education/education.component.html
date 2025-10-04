@@ -1,32 +1,55 @@
-<section id="education" class="container">
-  <h1 class="heading mb75px">
-    <span><i class="fas fa-graduation-cap"></i></span>
+<section id="education" class="education-section">
+  <div class="heading mb-4 text-center">
+    <span><i class="pi pi-graduation-cap"></i></span>
     <span>Education</span>
-  </h1>
+  </div>
 
-  <div
-    class="education-card"
-    *ngFor="let item of educationItems; let i = index"
-  >
-    <div class="date">{{ item.date }}</div>
-    <i class="icon pi" [ngClass]="item.icon"></i>
-    <div class="content">
-      <div class="logo">
-        <img
-          [src]="item.image"
-          class="img-fluid"
-          alt="Education Logo"
-          style="height: 80px; width: 160px"
-        />
+  <div class="container">
+    <div class="education-grid">
+      <div
+        class="education-card"
+        *ngFor="let item of educationItems; let i = index"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="i * 200"
+      >
+        <div class="education-header">
+          <div class="degree-info">
+            <h3 class="degree-title">{{ item.degree }}</h3>
+            <h4 class="institution-name">{{ item.college }}</h4>
+          </div>
+          <div class="education-period">
+            <span class="duration">{{ item.duration }}</span>
+            <span class="graduation-date">Graduated: {{ item.date }}</span>
+          </div>
+        </div>
+
+        <div class="education-body">
+          <p class="description">{{ item.description }}</p>
+
+          <div class="achievement-section">
+            <div class="achievement-item" *ngIf="item.CGPA">
+              <span class="achievement-label">CGPA</span>
+              <span class="achievement-value">{{ item.CGPA }}</span>
+            </div>
+
+            <div class="achievement-item" *ngIf="item.Percentage">
+              <span class="achievement-label">Percentage</span>
+              <span class="achievement-value">{{ item.Percentage }}</span>
+            </div>
+          </div>
+
+          <div class="education-actions" *ngIf="item.driveLink">
+            <a
+              [href]="item.driveLink"
+              target="_blank"
+              class="btn btn-outline-primary"
+            >
+              <i class="pi pi-external-link"></i>
+              View Certificate
+            </a>
+          </div>
+        </div>
       </div>
-      <h2>{{ item.college }}</h2>
-      <h5>{{ item.duration }}</h5>
-      <p>{{ item.description }}</p>
-      <p *ngIf="item.CGPA">CGPA: {{ item.CGPA }}</p>
-      <p *ngIf="item.Percentage">Percentage: {{ item.Percentage }}</p>
-      <p *ngIf="item.driveLink">
-        <a [href]="item.driveLink" target="_blank">View Certificate</a>
-      </p>
     </div>
   </div>
 </section>
