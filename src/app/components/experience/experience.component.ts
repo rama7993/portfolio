@@ -21,18 +21,19 @@ export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [
     {
       logo: './assets/images/satisfic.jpg',
-      designation: 'Junior Software Developer',
+      designation: 'Software Developer',
       companyName: 'Satisfic',
       duration: 'July 2022 - Present',
       description:
-        'As a Junior Software Developer at Satisfic, I drive innovation across diverse projects, architecting robust and scalable software solutions that deliver measurable business impact. Recognized for exceptional performance with the Rising Star Award in 2023, I excel in cross-functional collaboration, continuously advancing technical expertise while delivering exceptional user experiences through agile development practices.',
+        'Working as a Software Developer at Satisfic, I develop and maintain web applications using Angular, TypeScript, and related technologies. I work closely with the development team to build features that enhance our CRM platform and improve user workflows. My role involves both frontend development and integrating with backend services.',
       details: [
-        'Architected and optimized CRM data table features, significantly improving data accessibility and user interaction efficiency, resulting in enhanced system performance and streamlined user workflows.',
-        'Engineered dynamic permissions management system for user groups, implementing granular access controls that significantly enhanced platform security while improving operational flexibility and user management efficiency.',
-        'Developed comprehensive data visualization suite for marketing and sales dashboards, delivering real-time business intelligence that enabled data-driven decision making and improved strategic planning efficiency.',
-        'Implemented enterprise-grade authentication system using Keycloak, integrating secure login, signup, and 2FA features that enhanced platform security compliance and reduced authentication-related support tickets.',
-        'Built intelligent appointment scheduling system with multi-timezone support, automating lead management workflows and reducing scheduling conflicts while improving customer engagement.',
-        'Awarded Rising Star Award in 2023 for exceptional performance and contributions to project success, demonstrating a commitment to excellence and continuous improvement in software development practices.',
+        'Developed and maintained CRM data table features with advanced filtering, sorting, and pagination to help users efficiently manage large datasets of customer information.',
+        'Built a comprehensive user permission management system that allows administrators to create custom user groups and assign specific access levels, improving security and operational control.',
+        'Created interactive data visualization components for marketing and sales dashboards using charts and graphs to help stakeholders track key business metrics and performance indicators.',
+        'Integrated Keycloak authentication system to provide secure user login, registration, and two-factor authentication, enhancing platform security and user trust.',
+        'Implemented appointment scheduling functionality with multi-timezone support and automated notifications, streamlining the booking process and reducing scheduling conflicts.',
+        'Collaborated with cross-functional teams using Agile methodologies to deliver features on time and maintain code quality through regular code reviews and testing.',
+        'Received Rising Star Award in 2023 for consistent contributions, proactive problem-solving, and positive collaboration with team members.',
       ],
     },
   ];
@@ -42,18 +43,27 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {}
 
   get experienceStats() {
-    const totalAchievements = this.experiences.reduce((sum, exp) => sum + exp.details.length, 0);
+    const totalAchievements = this.experiences.reduce(
+      (sum, exp) => sum + exp.details.length,
+      0
+    );
     const technologies = new Set([
-      'Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'Node.js', 
-      'Keycloak', 'CRM Systems', 'Data Visualization', 'Authentication', 'API Integration',
-      'Git', 'Agile', 'Scrum', 'REST APIs'
+      'Angular',
+      'TypeScript',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'SCSS',
+      'Node.js',
+      'Git',
+      'REST APIs',
     ]);
 
     return {
       companies: this.experiences.length,
       totalYears: this.calculateTotalYears(),
       achievements: totalAchievements,
-      technologies: technologies.size
+      technologies: technologies.size,
     };
   }
 

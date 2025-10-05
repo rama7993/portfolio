@@ -9,6 +9,52 @@ import Typed from 'typed.js';
   standalone: false,
 })
 export class IntroComponent implements OnInit, AfterViewInit {
+  techStack: string[] = [
+    'Angular',
+    'TypeScript',
+    'JavaScript',
+    'HTML5',
+    'CSS3',
+    'SCSS',
+    'React',
+    'Node.js',
+    'MongoDB',
+    'Git',
+  ];
+
+  codingPlatforms = [
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/rama-koti-reddy-yerram',
+      iconClass: 'pi pi-linkedin',
+      hoverColor: '#0077b5',
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/rama7993',
+      iconClass: 'pi pi-github',
+      hoverColor: '#333333',
+    },
+    {
+      name: 'LeetCode',
+      url: 'https://leetcode.com/u/rama_koti_reddy/',
+      iconClass: 'pi pi-code',
+      hoverColor: '#f9c513',
+    },
+    {
+      name: 'HackerRank',
+      url: 'https://www.hackerrank.com/profile/ramakotireddy912',
+      iconClass: 'pi pi-share-alt',
+      hoverColor: '#00cc99',
+    },
+    {
+      name: 'GeeksforGeeks',
+      url: 'https://www.geeksforgeeks.org/user/ramakotireddyyerram/',
+      iconClass: 'pi pi-link',
+      hoverColor: '#009688',
+    },
+  ];
+
   constructor() {}
 
   ngOnInit() {
@@ -20,7 +66,7 @@ export class IntroComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // Initialize typing animation
+    // Initialize typing animation with enhanced effects
     const typed = new Typed('.typing-text', {
       strings: [
         'Frontend Developer',
@@ -28,13 +74,42 @@ export class IntroComponent implements OnInit, AfterViewInit {
         'UI/UX Enthusiast',
         'Full Stack Developer',
         'Problem Solver',
+        'Creative Thinker',
+        'Tech Innovator',
+        'Code Craftsman',
       ],
-      typeSpeed: 100,
-      backSpeed: 60,
-      backDelay: 2000,
+      typeSpeed: 80,
+      backSpeed: 50,
+      backDelay: 1500,
       loop: true,
       showCursor: true,
       cursorChar: '|',
+      smartBackspace: true,
+      fadeOut: true,
+      fadeOutClass: 'typed-fade-out',
+      fadeOutDelay: 500,
+    });
+
+    // Add floating animation to tech badges and platform links
+    this.animateTechBadges();
+    this.animatePlatformLinks();
+  }
+
+  animateTechBadges() {
+    const badges = document.querySelectorAll('.tech-badge');
+    badges.forEach((badge, index) => {
+      setTimeout(() => {
+        badge.classList.add('animate-in');
+      }, index * 100);
+    });
+  }
+
+  animatePlatformLinks() {
+    const platformLinks = document.querySelectorAll('.platform-link');
+    platformLinks.forEach((link, index) => {
+      setTimeout(() => {
+        link.classList.add('animate-in');
+      }, index * 150);
     });
   }
 

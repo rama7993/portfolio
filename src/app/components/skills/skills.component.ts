@@ -14,7 +14,7 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       name: 'Angular',
       image: './assets/skills/angular.svg',
-      level: 90,
+      level: 88,
       category: 'Frontend',
       color: '#DD0031',
     },
@@ -28,97 +28,104 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       name: 'JavaScript',
       image: './assets/skills/javascript.svg',
-      level: 88,
+      level: 87,
       category: 'Frontend',
       color: '#F7DF1E',
     },
     {
       name: 'HTML',
       image: './assets/skills/html.svg',
-      level: 95,
+      level: 92,
       category: 'Frontend',
       color: '#E34F26',
     },
     {
       name: 'CSS',
       image: './assets/skills/css.svg',
-      level: 90,
+      level: 88,
       category: 'Frontend',
       color: '#1572B6',
     },
     {
       name: 'SCSS',
       image: './assets/skills/sass.svg',
-      level: 85,
+      level: 82,
       category: 'Frontend',
       color: '#CC6699',
     },
     {
       name: 'React',
       image: './assets/skills/react.svg',
-      level: 75,
+      level: 65,
       category: 'Frontend',
       color: '#61DAFB',
     },
     {
       name: 'Bootstrap',
       image: './assets/skills/bootstrap.svg',
-      level: 80,
+      level: 70,
       category: 'Frontend',
       color: '#7952B3',
     },
     {
       name: 'NodeJs',
       image: './assets/skills/nodejs.svg',
-      level: 70,
+      level: 72,
       category: 'Backend',
       color: '#339933',
     },
     {
       name: 'MongoDb',
       image: './assets/skills/mongodb.svg',
-      level: 65,
+      level: 60,
       category: 'Database',
       color: '#47A248',
     },
     {
       name: 'MySQL',
       image: './assets/skills/mysql.svg',
-      level: 70,
+      level: 65,
       category: 'Database',
       color: '#4479A1',
     },
     {
       name: 'Java',
       image: './assets/skills/java.svg',
-      level: 75,
+      level: 55,
       category: 'Backend',
       color: '#007396',
     },
     {
       name: 'Python',
       image: './assets/skills/python.svg',
-      level: 60,
+      level: 50,
       category: 'Backend',
       color: '#3776AB',
     },
     {
       name: 'C++',
       image: './assets/skills/cpp.svg',
-      level: 65,
+      level: 45,
       category: 'Backend',
       color: '#00599C',
     },
     {
       name: 'C',
       image: './assets/skills/c.svg',
-      level: 60,
+      level: 40,
       category: 'Backend',
       color: '#A8B9CC',
     },
+    {
+      name: 'Git',
+      image: './assets/skills/git.svg',
+      level: 80,
+      category: 'Tools',
+      color: '#F05032',
+    },
   ];
 
-  skillCategories = ['Frontend', 'Backend', 'Database'];
+  skillCategories = ['Frontend', 'Backend', 'Database', 'Tools'];
   selectedCategory = 'All';
   skillChart: Chart | null = null;
   private themeChangeListener?: () => void;
@@ -205,9 +212,15 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
                 databaseSkills.length,
             ],
             backgroundColor: [
-              isDarkMode ? 'rgba(102, 126, 234, 0.8)' : 'rgba(102, 126, 234, 0.9)',
-              isDarkMode ? 'rgba(118, 75, 162, 0.8)' : 'rgba(118, 75, 162, 0.9)',
-              isDarkMode ? 'rgba(78, 205, 196, 0.8)' : 'rgba(78, 205, 196, 0.9)',
+              isDarkMode
+                ? 'rgba(102, 126, 234, 0.8)'
+                : 'rgba(102, 126, 234, 0.9)',
+              isDarkMode
+                ? 'rgba(118, 75, 162, 0.8)'
+                : 'rgba(118, 75, 162, 0.9)',
+              isDarkMode
+                ? 'rgba(78, 205, 196, 0.8)'
+                : 'rgba(78, 205, 196, 0.9)',
             ],
             borderColor: [
               isDarkMode ? 'rgba(102, 126, 234, 1)' : 'rgba(102, 126, 234, 1)',

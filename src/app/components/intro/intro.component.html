@@ -24,6 +24,34 @@
           <i class="pi pi-eye"></i> View My Work
         </button>
       </div>
+
+      <!-- Coding Platform Links -->
+      <div class="coding-platforms" data-aos="fade-up" data-aos-delay="1000">
+        <span class="platform-label">Connect & Follow:</span>
+        <div class="platform-links">
+          <a
+            *ngFor="let platform of codingPlatforms"
+            [href]="platform.url"
+            target="_blank"
+            class="platform-link"
+            [title]="platform.name"
+            [ngStyle]="{ '--hover-color': platform.hoverColor }"
+          >
+            <i [class]="platform.iconClass"></i>
+            <span class="platform-name">{{ platform.name }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tech Stack Indicators -->
+      <div class="tech-stack" data-aos="fade-up" data-aos-delay="1200">
+        <span class="tech-label">Tech Stack:</span>
+        <div class="tech-badges">
+          <span class="tech-badge" *ngFor="let tech of techStack">{{
+            tech
+          }}</span>
+        </div>
+      </div>
     </div>
     <div class="hero-image" data-aos="fade-left" data-aos-delay="1000">
       <div class="profile-card">
@@ -34,6 +62,14 @@
       </div>
     </div>
   </div>
+  <!-- Floating Elements -->
+  <div class="floating-elements">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+  </div>
+
   <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
     <div class="scroll-text">Scroll Down</div>
     <div class="scroll-arrow">

@@ -47,7 +47,7 @@
           <div class="detail-section">
             <h4><i class="pi pi-star"></i> Career Goals</h4>
             <p>
-              Currently working as a Junior Software Developer at Satisfic, I'm
+              Currently working as a Software Developer at Satisfic, I'm
               actively pursuing my goal of becoming a comprehensive full-stack
               developer. I'm passionate about creating high-performance
               applications that deliver exceptional user experiences.
@@ -58,43 +58,18 @@
 
       <div class="about-stats" data-aos="fade-left">
         <div class="stats-grid">
-          <div class="stat-card">
+          <div
+            *ngFor="let stat of stats; let i = index"
+            class="stat-card"
+            [attr.data-aos]="'fade-up'"
+            [attr.data-aos-delay]="i * 100"
+          >
             <div class="stat-icon">
-              <i class="pi pi-code"></i>
+              <i [class]="stat.icon"></i>
             </div>
             <div class="stat-content">
-              <h3>2+</h3>
-              <p>Years Experience</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="pi pi-briefcase"></i>
-            </div>
-            <div class="stat-content">
-              <h3>10+</h3>
-              <p>Projects Completed</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="pi pi-users"></i>
-            </div>
-            <div class="stat-content">
-              <h3>5+</h3>
-              <p>Technologies Mastered</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="pi pi-trophy"></i>
-            </div>
-            <div class="stat-content">
-              <h3>1</h3>
-              <p>Award Received</p>
+              <h3>{{ stat.value }}</h3>
+              <p>{{ stat.label }}</p>
             </div>
           </div>
         </div>
@@ -102,25 +77,14 @@
         <div class="about-highlights">
           <h4>What I Do Best</h4>
           <div class="highlight-list">
-            <div class="highlight-item">
+            <div
+              *ngFor="let highlight of highlights; let i = index"
+              class="highlight-item"
+              [attr.data-aos]="'fade-right'"
+              [attr.data-aos-delay]="i * 100"
+            >
               <i class="pi pi-check-circle"></i>
-              <span>Frontend Development with Angular</span>
-            </div>
-            <div class="highlight-item">
-              <i class="pi pi-check-circle"></i>
-              <span>Responsive Web Design</span>
-            </div>
-            <div class="highlight-item">
-              <i class="pi pi-check-circle"></i>
-              <span>API Integration & Development</span>
-            </div>
-            <div class="highlight-item">
-              <i class="pi pi-check-circle"></i>
-              <span>Database Design & Management</span>
-            </div>
-            <div class="highlight-item">
-              <i class="pi pi-check-circle"></i>
-              <span>Code Review & Optimization</span>
+              <span>{{ highlight }}</span>
             </div>
           </div>
         </div>

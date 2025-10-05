@@ -9,25 +9,12 @@
     <div class="projects-filter mb-4" data-aos="fade-up">
       <div class="filter-buttons">
         <button
+          *ngFor="let category of categories"
           class="filter-btn"
-          [class.active]="selectedCategory === 'All'"
-          (click)="filterProjects('All')"
+          [class.active]="selectedCategory === category"
+          (click)="filterProjects(category)"
         >
-          All Projects
-        </button>
-        <button
-          class="filter-btn"
-          [class.active]="selectedCategory === 'Frontend'"
-          (click)="filterProjects('Frontend')"
-        >
-          Frontend
-        </button>
-        <button
-          class="filter-btn"
-          [class.active]="selectedCategory === 'Full Stack'"
-          (click)="filterProjects('Full Stack')"
-        >
-          Full Stack
+          {{ category === "All" ? "All Projects" : category }}
         </button>
       </div>
     </div>

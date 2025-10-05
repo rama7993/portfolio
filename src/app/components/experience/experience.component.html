@@ -51,9 +51,10 @@
       <div
         *ngFor="let exp of experiences; let i = index"
         class="experience-item"
-        [style.animation-delay]="(i * 0.2) + 's'"
+        [style.animation-delay]="i * 0.2 + 's'"
       >
-        <div class="experience-card"
+        <div
+          class="experience-card"
           [attr.data-aos]="'fade-up'"
           [attr.data-aos-delay]="i * 200"
         >
