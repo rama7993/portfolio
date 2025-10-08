@@ -11,7 +11,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   projects = [
     {
       name: 'QuickChat',
-      imageUrl: './assets/images/projects/quickchat.png',
+      imageUrl: './assets/images/projects/quick-chat.png',
       description:
         'Real-time chat application enabling user-to-user messaging with authentication, route protection, and HTTP interceptors. Includes features like date-grouped message history, user profile management, and live typing indicators via Socket.io. Backend powered by Node.js with persistent data storage in MongoDB.',
       techStack: ['Angular', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
@@ -26,10 +26,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       imageUrl: './assets/images/projects/sportify.png',
       description:
         'Built a comprehensive music discovery platform using Angular 17 with real-time Spotify API integration. Features include advanced multi-type search (tracks, artists, albums, playlists), smart infinite scroll with intelligent pagination, global audio player with album previews, fully responsive design with glassmorphism UI, and real-time API integration with proper error handling.',
-      techStack: ['Angular', 'TypeScript', 'SCSS', 'Spotify Web API'],
+      techStack: [
+        'Angular',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Spotify Web API',
+      ],
       githubLink: 'https://github.com/rama7993/sportify',
       link: 'https://sportify-rho.vercel.app/',
-      category: 'Frontend',
+      category: 'Full Stack',
       featured: true,
       status: 'Live',
     },
@@ -43,6 +49,18 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       link: 'https://weather-hub-eight.vercel.app/',
       category: 'Frontend',
       featured: true,
+      status: 'Live',
+    },
+    {
+      name: 'News Hub',
+      imageUrl: './assets/images/projects/news-hub.png',
+      description:
+        'A responsive news aggregation platform built with Angular. It fetches real-time news from the GNews API and includes category filtering, keyword search, and a modern, user-friendly interface.',
+      techStack: ['Angular', 'SCSS', 'Bootstrap', 'GNews API'],
+      githubLink: 'https://github.com/rama7993/news-hub',
+      link: 'https://rama7993.github.io/news-hub/',
+      category: 'Frontend',
+      featured: false,
       status: 'Live',
     },
     {
