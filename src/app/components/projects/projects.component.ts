@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Swiper } from 'swiper';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -7,13 +6,13 @@ import { Swiper } from 'swiper';
   styleUrls: ['./projects.component.scss'],
   standalone: false,
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
+export class ProjectsComponent implements OnInit {
   projects = [
     {
       name: 'QuickChat',
       imageUrl: './assets/images/projects/quick-chat.png',
       description:
-        'Real-time chat application enabling user-to-user messaging with authentication, route protection, and HTTP interceptors. Includes features like date-grouped message history, user profile management, and live typing indicators via Socket.io. Backend powered by Node.js with persistent data storage in MongoDB.',
+        'Architected a scalable real-time messaging application using Socket.io and Node.js, capable of handling concurrent user connections with low-latency delivery. Implemented secure JWT authentication, mongo-persistent chat history, and optimized frontend rendering for instant message updates.',
       techStack: ['Angular', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
       githubLink: 'https://github.com/rama7993/QuickChat-Frontend',
       link: 'https://quick-chat-fe.vercel.app/login',
@@ -25,7 +24,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       name: 'Sportify - Music Discovery Platform',
       imageUrl: './assets/images/projects/sportify.png',
       description:
-        'Built a comprehensive music discovery platform using Angular 17 with real-time Spotify API integration. Features include advanced multi-type search (tracks, artists, albums, playlists), smart infinite scroll with intelligent pagination, global audio player with album previews, fully responsive design with glassmorphism UI, and real-time API integration with proper error handling.',
+        'Engineered a robust music discovery platform integrating the complex Spotify Web API. Implemented advanced features like token-based authentication, intelligent infinite scrolling for performance optimization, and a global audio player state managed via RxJS services.',
       techStack: [
         'Angular',
         'Node.js',
@@ -43,7 +42,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       name: 'Weatherhub - Advanced Weather Dashboard',
       imageUrl: './assets/images/projects/weather-hub.png',
       description:
-        'A modern, feature-rich weather application built with Angular 18, featuring real-time weather data, interactive maps, charts, and a beautiful glassmorphism UI design.',
+        'Developed a high-performance weather dashboard visualizing complex meteorological data through interactive charts and maps. Utilized SCSS modules for a cohesive glassmorphism design system and optimized API calls for sub-second data rendering.',
       techStack: ['Angular', 'TypeScript', 'SCSS', 'Weather API'],
       githubLink: 'https://github.com/rama7993/weather-hub',
       link: 'https://weather-hub-eight.vercel.app/',
@@ -55,7 +54,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       name: 'News Hub',
       imageUrl: './assets/images/projects/news-hub.png',
       description:
-        'A responsive news aggregation platform built with Angular. It fetches real-time news from the GNews API and includes category filtering, keyword search, and a modern, user-friendly interface.',
+        'Built a responsive news aggregation engine that fetches and categorizes global news streams in real-time. Implemented efficient search algorithms and category filtering to deliver a seamless content consumption experience.',
       techStack: ['Angular', 'SCSS', 'Bootstrap', 'GNews API'],
       githubLink: 'https://github.com/rama7993/news-hub',
       link: 'https://rama7993.github.io/news-hub/',
@@ -67,7 +66,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       name: 'Music Search',
       imageUrl: './assets/images/projects/music-search.png',
       description:
-        'A modern, responsive Angular application for discovering and exploring music from Spotify. Built with Angular 14 and enhanced with intelligent search flow, beautiful UI/UX, advanced audio player, and comprehensive music information.',
+        'A comprehensive music exploration interface built with Angular. focused on clean component architecture and efficient state management for handling large lists of tracks and albums.',
       techStack: ['Angular', 'Bootstrap', 'Spotify API'],
       githubLink: 'https://github.com/rama7993/music-search',
       link: 'https://rama7993.github.io/music-search/',
@@ -79,7 +78,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       name: 'Weather Search',
       imageUrl: './assets/images/projects/weather-search.png',
       description:
-        'A beautiful, modern weather application built with Angular 14, featuring real-time weather data, interactive elements, and a stunning glassmorphism UI design powered by RapidAPI.',
+        'A lightweight, responsive weather application demonstrating effective use of external APIs and asynchronous data handling in Angular 14.',
       techStack: ['Angular', 'TypeScript', 'CSS', 'RapidAPI'],
       githubLink: 'https://github.com/rama7993/weather-search',
       link: 'https://rama7993.github.io/weather-search/',
@@ -88,13 +87,25 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
       status: 'Live',
     },
     {
-      name: 'eDairy – Responsive Website for Organic Dairy Products',
+      name: 'eDairy – Responsive Website',
       imageUrl: './assets/images/projects/eDairy.png',
       description:
-        'Designed and developed a modern, responsive website for showcasing dairy products using HTML, CSS, and JavaScript. Implemented an interactive product catalog with search, product preview modal, and wishlist/favorites feature. Built a smart cart-like experience with item management and persistent data storage using LocalStorage. Developed a user authentication system with login, registration, password reset, and client-side validation.',
+        'Designed a fully responsive e-commerce interface for dairy products. Implemented client-side state management for the shopping cart and optimized asset loading for fast First Contentful Paint.',
       techStack: ['JavaScript', 'HTML5', 'CSS', 'CSS Flexbox'],
       githubLink: 'https://github.com/rama7993/edairy',
       link: 'https://rama7993.github.io/eDairy/',
+      category: 'Frontend',
+      featured: false,
+      status: 'Live',
+    },
+    {
+      name: 'SoftPhone – Web SIP & Video Calls',
+      imageUrl: './assets/images/projects/soft-phone.png',
+      description:
+        'Implemented a browser-based VoIP solution using WebRTC and Jitsi Meet integration. Focused on handling real-time media streams and ensuring connection stability across different network conditions.',
+      techStack: ['Angular', 'TypeScript', 'WebRTC', 'Jitsi Meet'],
+      githubLink: 'https://github.com/rama7993/soft-phone',
+      link: 'https://rama7993.github.io/soft-phone',
       category: 'Frontend',
       featured: false,
       status: 'Live',
@@ -103,41 +114,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   categories = ['All', 'Frontend', 'Full Stack'];
   selectedCategory = 'All';
-  swiper: Swiper | null = null;
-
   ngOnInit(): void {}
-
-  ngAfterViewInit() {
-    this.initSwiper();
-  }
-
-  initSwiper() {
-    this.swiper = new Swiper('.projects-swiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-      },
-    });
-  }
 
   filterProjects(category: string) {
     this.selectedCategory = category;

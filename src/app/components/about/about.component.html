@@ -6,10 +6,10 @@
 
   <div class="container">
     <div class="about-content">
-      <div class="about-text" data-aos="fade-right">
+      <div class="about-text">
         <div class="about-intro">
           <h2>Hi, I'm <span class="highlight">Rama Koti Reddy Yerram</span></h2>
-          <h3>Full Stack Developer & Angular Specialist</h3>
+          <h3>Senior Angular Architect & Performance Engineer</h3>
           <p class="intro-text">
             A passionate B.Tech graduate in Computer Science from NIT Rourkela
             (2022) with hands-on experience building modern web applications. I
@@ -56,14 +56,9 @@
         </div>
       </div>
 
-      <div class="about-stats" data-aos="fade-left">
+      <div class="about-stats">
         <div class="stats-grid">
-          <div
-            *ngFor="let stat of stats; let i = index"
-            class="stat-card"
-            [attr.data-aos]="'fade-up'"
-            [attr.data-aos-delay]="i * 100"
-          >
+          <div *ngFor="let stat of stats; let i = index" class="stat-card">
             <div class="stat-icon">
               <i [class]="stat.icon"></i>
             </div>
@@ -80,8 +75,6 @@
             <div
               *ngFor="let highlight of highlights; let i = index"
               class="highlight-item"
-              [attr.data-aos]="'fade-right'"
-              [attr.data-aos-delay]="i * 100"
             >
               <i class="pi pi-check-circle"></i>
               <span>{{ highlight }}</span>

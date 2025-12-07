@@ -6,7 +6,7 @@
 
   <div class="container">
     <!-- Certification Stats -->
-    <div class="cert-stats mb-5" data-aos="fade-up">
+    <div class="cert-stats mb-5">
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-icon">
@@ -66,7 +66,7 @@
     </div>
 
     <!-- Filter Buttons -->
-    <div class="cert-filter mb-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="cert-filter mb-4">
       <div class="filter-buttons">
         <button
           *ngFor="let category of categories"
@@ -80,7 +80,7 @@
     </div>
 
     <!-- Certifications Grid -->
-    <div class="certifications-grid" data-aos="fade-up" data-aos-delay="200">
+    <div class="certifications-grid">
       <div
         *ngFor="let cert of filteredCertifications; let i = index"
         class="certification-card"
@@ -126,6 +126,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>

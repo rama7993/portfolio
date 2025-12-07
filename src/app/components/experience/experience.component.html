@@ -6,9 +6,9 @@
 
   <div class="container">
     <!-- Experience Overview -->
-    <div class="experience-overview" data-aos="fade-up">
+    <div class="experience-overview">
       <div class="overview-grid">
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="overview-card">
           <div class="overview-icon">
             <i class="pi pi-building"></i>
           </div>
@@ -17,7 +17,7 @@
             <p>Companies</p>
           </div>
         </div>
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="overview-card">
           <div class="overview-icon">
             <i class="pi pi-calendar"></i>
           </div>
@@ -26,7 +26,7 @@
             <p>Years Experience</p>
           </div>
         </div>
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="overview-card">
           <div class="overview-icon">
             <i class="pi pi-star"></i>
           </div>
@@ -35,7 +35,7 @@
             <p>Key Achievements</p>
           </div>
         </div>
-        <div class="overview-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="overview-card">
           <div class="overview-icon">
             <i class="pi pi-cog"></i>
           </div>
@@ -51,13 +51,8 @@
       <div
         *ngFor="let exp of experiences; let i = index"
         class="experience-item"
-        [style.animation-delay]="i * 0.2 + 's'"
       >
-        <div
-          class="experience-card"
-          [attr.data-aos]="'fade-up'"
-          [attr.data-aos-delay]="i * 200"
-        >
+        <div class="experience-card">
           <div class="card-header">
             <div class="company-info">
               <div class="company-logo">
@@ -97,8 +92,6 @@
                 <div
                   *ngFor="let detail of exp.details; let j = index"
                   class="achievement-item"
-                  [attr.data-aos]="'fade-up'"
-                  [attr.data-aos-delay]="i * 200 + j * 100"
                 >
                   <div class="achievement-icon">
                     <i class="pi pi-check-circle"></i>

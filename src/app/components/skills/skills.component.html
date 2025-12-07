@@ -7,13 +7,13 @@
   <div class="container">
     <!-- Skills Overview Chart -->
     <div class="row mb-5">
-      <div class="col-lg-6" data-aos="fade-right">
+      <div class="col-lg-6">
         <div class="chart-container">
           <h3 class="chart-title">Skills Distribution</h3>
           <canvas id="skillChart"></canvas>
         </div>
       </div>
-      <div class="col-lg-6" data-aos="fade-left">
+      <div class="col-lg-6">
         <div class="skills-summary">
           <h3 class="summary-title">Technical Expertise</h3>
           <div class="expertise-item">
@@ -52,7 +52,7 @@
     </div>
 
     <!-- Skills Filter -->
-    <div class="skills-filter mb-4" data-aos="fade-up">
+    <div class="skills-filter mb-4">
       <div class="filter-buttons">
         <button
           class="filter-btn"
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Skills Grid -->
-    <div class="skills-grid" data-aos="fade-up" data-aos-delay="200">
+    <div class="skills-grid">
       <div
         *ngFor="let skill of filteredSkills; let i = index"
         class="skill-card"

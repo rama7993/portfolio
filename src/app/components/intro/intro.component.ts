@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import * as AOS from 'aos';
+import { Component, AfterViewInit } from '@angular/core';
 import Typed from 'typed.js';
 
 @Component({
@@ -8,7 +7,7 @@ import Typed from 'typed.js';
   styleUrls: ['./intro.component.scss'],
   standalone: false,
 })
-export class IntroComponent implements OnInit, AfterViewInit {
+export class IntroComponent implements AfterViewInit {
   techStack: string[] = [
     'Angular',
     'TypeScript',
@@ -57,59 +56,23 @@ export class IntroComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-    });
-  }
-
   ngAfterViewInit() {
-    // Initialize typing animation with enhanced effects
+    // Initialize typing animation
     const typed = new Typed('.typing-text', {
       strings: [
-        'Frontend Developer',
-        'Angular Specialist',
-        'UI/UX Enthusiast',
+        'Senior Angular Architect',
+        'Frontend Architect',
+        'Performance Engineer',
         'Full Stack Developer',
-        'Problem Solver',
-        'Creative Thinker',
-        'Tech Innovator',
-        'Code Craftsman',
+        'System Designer',
+        'Tech Lead',
       ],
-      typeSpeed: 80,
-      backSpeed: 50,
-      backDelay: 1500,
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 2000,
       loop: true,
       showCursor: true,
       cursorChar: '|',
-      smartBackspace: true,
-      fadeOut: true,
-      fadeOutClass: 'typed-fade-out',
-      fadeOutDelay: 500,
-    });
-
-    // Add floating animation to tech badges and platform links
-    this.animateTechBadges();
-    this.animatePlatformLinks();
-  }
-
-  animateTechBadges() {
-    const badges = document.querySelectorAll('.tech-badge');
-    badges.forEach((badge, index) => {
-      setTimeout(() => {
-        badge.classList.add('animate-in');
-      }, index * 100);
-    });
-  }
-
-  animatePlatformLinks() {
-    const platformLinks = document.querySelectorAll('.platform-link');
-    platformLinks.forEach((link, index) => {
-      setTimeout(() => {
-        link.classList.add('animate-in');
-      }, index * 150);
     });
   }
 

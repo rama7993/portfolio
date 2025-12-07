@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import * as AOS from 'aos';
 
 declare var particlesJS: any;
 
@@ -12,14 +11,7 @@ declare var particlesJS: any;
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'portfolio';
 
-  ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-      easing: 'ease-in-out',
-    });
-  }
+  ngOnInit() {}
 
   ngAfterViewInit() {
     // Initialize particles.js

@@ -20,22 +20,22 @@ export class AboutComponent implements OnInit {
     },
     {
       icon: 'pi pi-users',
-      value: '8',
+      value: '15+',
       label: 'Technologies Used',
     },
     {
       icon: 'pi pi-trophy',
-      value: '1',
-      label: 'Award Received',
+      value: '5+',
+      label: 'Honors & Awards',
     },
   ];
 
   highlights = [
-    'Frontend Development with Angular',
-    'Responsive Web Design',
-    'API Integration & Development',
-    'Database Design & Management',
-    'Code Review & Optimization',
+    'Enterprise Application Architecture',
+    'High-Performance UI Engineering',
+    'Scalable State Management (NgRx)',
+    'Secure Authentication & RBAC',
+    'Complex System Design',
   ];
 
   constructor() {}

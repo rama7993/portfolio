@@ -6,7 +6,7 @@
 
   <div class="container">
     <!-- Project Filter -->
-    <div class="projects-filter mb-4" data-aos="fade-up">
+    <div class="projects-filter mb-4">
       <div class="filter-buttons">
         <button
           *ngFor="let category of categories"
@@ -20,11 +20,10 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+    <div class="projects-grid">
       <div
         *ngFor="let project of filteredProjects; let i = index"
         class="project-card"
-        [style.animation-delay]="i * 0.1 + 's'"
       >
         <div class="project-image-container">
           <img
