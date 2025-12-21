@@ -2,7 +2,7 @@
   background: linear-gradient(
     135deg,
     var(--background-color) 0%,
-    rgba(153, 81, 224, 0.05) 100%
+    rgba(var(--primary-rgb), 0.05) 100%
   );
   padding: 4rem 0;
 
@@ -38,7 +38,7 @@
         align-items: flex-start;
         margin-bottom: 1.5rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(153, 81, 224, 0.1);
+        border-bottom: 1px solid rgba(var(--primary-rgb), 0.1);
 
         .degree-info {
           flex: 1;
@@ -52,7 +52,7 @@
           }
 
           .institution-name {
-            color: #9b51e0;
+            color: var(--primary-color);
             font-weight: 600;
             font-size: 1rem;
             margin-bottom: 0;
@@ -95,7 +95,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(153, 81, 224, 0.1);
+            background: rgba(var(--primary-rgb), 0.1);
             padding: 1rem;
             border-radius: 10px;
             flex: 1;
@@ -108,7 +108,7 @@
             }
 
             .achievement-value {
-              color: #9b51e0;
+              color: var(--primary-color);
               font-size: 1.1rem;
               font-weight: 700;
             }
@@ -124,12 +124,12 @@
             transition: all 0.3s ease;
 
             &.btn-outline-primary {
-              border: 1px solid rgba(153, 81, 224, 0.3);
-              color: #9b51e0;
+              border: 1px solid rgba(var(--primary-rgb), 0.3);
+              color: var(--primary-color);
 
               &:hover {
-                background: rgba(153, 81, 224, 0.1);
-                border-color: #9b51e0;
+                background: rgba(var(--primary-rgb), 0.1);
+                border-color: var(--primary-color);
                 transform: translateY(-1px);
               }
             }

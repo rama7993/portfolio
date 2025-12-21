@@ -10,7 +10,7 @@ import { Mode } from './mode-toggle.model';
 
 @Injectable()
 export class ModeToggleService {
-  private currentMode: Mode = Mode.LIGHT;
+  private currentMode: Mode = Mode.DARK;
   private modeChangedSubject = new BehaviorSubject<Mode>(this.currentMode);
   modeChanged$: Observable<Mode> = this.modeChangedSubject.asObservable();
 
@@ -41,12 +41,12 @@ export class ModeToggleService {
       const deviceMode = window.matchMedia('(prefers-color-scheme: dark)');
       let initMode = this.modeStorage.get();
       if (!initMode) {
-        initMode = deviceMode.matches ? Mode.DARK : Mode.LIGHT;
+        initMode = Mode.DARK;
       }
       this.applyMode(initMode);
     } else {
-      console.warn('Window object is not available. Defaulting to LIGHT mode.');
-      this.applyMode(Mode.LIGHT);
+      console.warn('Window object is not available. Defaulting to DARK mode.');
+      this.applyMode(Mode.DARK);
     }
   }
 

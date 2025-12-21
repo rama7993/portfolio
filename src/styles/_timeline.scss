@@ -38,19 +38,19 @@
     top: 20px;
     border-style: solid;
     border-width: 10px 10px 10px 0;
-    border-color: transparent #9b51e0 transparent transparent;
+    border-color: transparent var(--primary-color) transparent transparent;
   }
 
   &.right::before {
     right: 100%;
     left: 0.8rem;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #9b51e0;
+    border-color: transparent transparent transparent var(--primary-color);
   }
 
   .date {
     font-size: 14px;
-    color: #9b51e0;
+    color: var(--primary-color);
     font-weight: bold;
   }
 
@@ -60,7 +60,7 @@
     transform: translateX(-50%);
     font-size: 24px;
     color: #ffffff;
-    background: #9b51e0;
+    background: var(--primary-color);
     padding: 10px;
     border-radius: 50%;
     border: 3px solid #ffffff;
@@ -76,7 +76,7 @@
     h2 {
       font-size: 20px;
       margin-bottom: 0.5rem;
-      color: #9b51e0;
+      color: var(--primary-color);
     }
 
     h5 {
@@ -92,7 +92,7 @@
     }
 
     a {
-      color: #9b51e0;
+      color: var(--primary-color);
       text-decoration: underline;
 
       &:hover {
@@ -129,7 +129,7 @@
     &::before {
       left: 20px;
       border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent #9b51e0;
+      border-color: transparent transparent transparent var(--primary-color);
     }
 
     .icon {

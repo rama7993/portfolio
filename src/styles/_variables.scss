@@ -1,46 +1,50 @@
 // Light mode colors
-$background-light: rgb(245, 245, 245);
+$background-light: rgb(248, 250, 252);
 $surface-light: rgb(255, 255, 255);
-$text-light: rgb(33, 37, 41);
-$primary-light: #9b51e0;
-$accent-light: rgb(108, 117, 125);
-$success-light: rgb(40, 167, 69);
-$danger-light: rgb(220, 53, 69);
-$warning-light: rgb(255, 193, 7);
-$info-light: rgb(23, 162, 184);
-$muted-text-light: rgb(108, 117, 125);
-$highlight-light: rgb(255, 235, 59);
-$border-light: rgb(200, 200, 200);
-$shadow-light: rgba(0, 0, 0, 0.1);
-$hover-light: rgb(240, 240, 240);
-$overlay-light: rgba(0, 0, 0, 0.05);
+$text-light: rgb(15, 23, 42);
+$primary-light: #7c3aed; // Violet-600 (Bold & Royal)
+$accent-light: #4c1d95; // Violet-900
+$success-light: #059669;
+$danger-light: #dc2626;
+$warning-light: #d97706;
+$info-light: #0891b2;
+$muted-text-light: #64748b;
+$highlight-light: #a78bfa; // Violet-400
+$border-light: #e2e8f0;
+$shadow-light: rgba(15, 23, 42, 0.08);
+$hover-light: #f5f3ff; // Light Violet tint
+$overlay-light: rgba(124, 58, 237, 0.05);
 
-// Additional meaningful color variables
-$gradient-primary-start: #667eea;
-$gradient-primary-end: #764ba2;
-$gradient-secondary-start: #4ecdc4;
-$gradient-secondary-end: #3bb5a8;
-$glass-overlay-light: rgba(255, 255, 255, 0.1);
-$glass-overlay-dark: rgba(0, 0, 0, 0.1);
-$error-color: #e74c3c;
-$error-light: rgba(231, 76, 60, 0.1);
+// Gradient Variables - Royal Violet
+$gradient-primary-start: #7c3aed; // Violet-600
+$gradient-primary-end: #a78bfa; // Violet-400
 
-// Dark mode colors
-$background-dark: rgb(18, 18, 18);
-$surface-dark: rgb(24, 23, 23);
-$text-dark: rgb(230, 230, 230);
-$primary-dark: #9b51e0;
-$accent-dark: rgb(130, 140, 148);
-$success-dark: rgb(72, 201, 176);
-$danger-dark: rgb(220, 53, 69);
-$warning-dark: rgb(255, 193, 7);
-$info-dark: rgb(23, 162, 184);
-$muted-text-dark: rgb(108, 117, 125);
-$highlight-dark: rgb(255, 202, 40);
-$border-dark: rgb(50, 50, 50);
-$shadow-dark: rgba(0, 0, 0, 0.3);
-$hover-dark: rgb(34, 34, 34);
-$overlay-dark: rgba(255, 255, 255, 0.1);
+// Secondary Gradient - Deep Indigo
+$gradient-secondary-start: #1e1b4b; // Indigo-950
+$gradient-secondary-end: #312e81; // Indigo-900
+
+$glass-overlay-light: rgba(255, 255, 255, 0.3);
+$glass-overlay-dark: rgba(15, 23, 42, 0.6);
+
+$error-color: #ef4444;
+$error-light: rgba(239, 68, 68, 0.1);
+
+// Dark mode colors (Deep Navy & Violet)
+$background-dark: #0b1120; // Deep Navy
+$surface-dark: #111827;
+$text-dark: #f8fafc;
+$primary-dark: #8b5cf6; // Violet-500 (Vibrant in dark mode)
+$accent-dark: #a78bfa; // Violet-400
+$success-dark: #10b981;
+$danger-dark: #ef4444;
+$warning-dark: #f59e0b;
+$info-dark: #06b6d4;
+$muted-text-dark: #94a3b8;
+$highlight-dark: #c4b5fd; // Violet-300
+$border-dark: #1f2937;
+$shadow-dark: rgba(0, 0, 0, 0.5);
+$hover-dark: #1e1b4b; // Deep Indigo hover
+$overlay-dark: rgba(124, 58, 237, 0.05);
 
 // Mixin for light mode
 @mixin light-theme() {
@@ -66,6 +70,16 @@ $overlay-dark: rgba(255, 255, 255, 0.1);
   --glass-overlay: #{$glass-overlay-light};
   --error-color: #{$error-color};
   --error-light: #{$error-light};
+
+  // RGB Components for Opacity
+  --primary-rgb: 124, 58, 237; // Violet-600
+  --text-rgb: 15, 23, 42; // Slate-900
+  --background-rgb: 248, 250, 252;
+  --hero-bg: #0b1120; // Force dark hero in light mode for contrast
+  --hero-text-color: #ffffff;
+  --hero-text-color: #ffffff;
+  --hero-muted-color: rgba(255, 255, 255, 0.8);
+  --hero-glass-overlay: #{$glass-overlay-dark}; // Force dark overlay for premium look
 }
 
 // Mixin for dark mode
@@ -92,12 +106,22 @@ $overlay-dark: rgba(255, 255, 255, 0.1);
   --glass-overlay: #{$glass-overlay-dark};
   --error-color: #{$error-color};
   --error-light: #{$error-light};
+
+  // RGB Components for Opacity
+  --primary-rgb: 139, 92, 246; // Violet-500
+  --text-rgb: 248, 250, 252; // Slate-50
+  --background-rgb: 11, 17, 32;
+  --hero-bg: #0b1120;
+  --hero-text-color: var(--text-color);
+  --hero-text-color: var(--text-color);
+  --hero-muted-color: var(--muted-text-color);
+  --hero-glass-overlay: var(--glass-overlay);
 }
 
-// Bootstrap theme variables
-$primary: #9b51e0;
-$secondary: #6c757d;
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
+// Bootstrap theme variables overrides
+$primary: #7c3aed;
+$secondary: #1e1b4b;
+$success: #10b981;
+$info: #06b6d4;
+$warning: #f59e0b;
+$danger: #ef4444;
