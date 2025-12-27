@@ -60,7 +60,11 @@ section {
       transform: translateX(-50%);
       width: 50px;
       height: 3px;
-      background: linear-gradient(45deg, var(--primary-color), var(--gradient-secondary-start));
+      background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--gradient-secondary-start)
+      );
       border-radius: 2px;
     }
   }
@@ -139,10 +143,18 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, var(--primary-color), var(--gradient-secondary-start));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--gradient-secondary-start)
+  );
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, var(--primary-color), var(--gradient-secondary-end));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--gradient-secondary-end)
+  );
 }

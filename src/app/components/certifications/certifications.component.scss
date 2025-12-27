@@ -60,24 +60,6 @@
       position: relative;
       overflow: hidden;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(
-          90deg,
-          var(--primary-color),
-          var(--gradient-primary-end),
-          var(--gradient-secondary-start),
-          var(--primary-color)
-        );
-        background-size: 300% 100%;
-        animation: gradientFlow 4s ease infinite;
-      }
-
       &:hover {
         transform: translateY(-12px) scale(1.05);
         box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15),
@@ -240,24 +222,6 @@
     animation: slideInUp 0.8s ease forwards;
     opacity: 0;
     transform: translateY(50px);
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(
-        90deg,
-        var(--primary-color),
-        var(--gradient-primary-end),
-        var(--gradient-secondary-start),
-        var(--primary-color)
-      );
-      background-size: 300% 100%;
-      animation: gradientFlow 4s ease infinite;
-    }
 
     &:hover {
       transform: translateY(-15px) scale(1.02);
@@ -531,18 +495,6 @@
   }
   66% {
     transform: translateY(30px) rotate(240deg);
-  }
-}
-
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
