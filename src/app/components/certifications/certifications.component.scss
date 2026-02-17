@@ -17,7 +17,8 @@
     right: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(
+    background:
+      radial-gradient(
         circle at 80% 20%,
         rgba(102, 126, 234, 0.1) 0%,
         transparent 50%
@@ -52,7 +53,8 @@
       border-radius: 24px;
       padding: 2.5rem;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.1),
         0 0 0 1px rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
       border: 1px solid var(--border-color);
@@ -62,7 +64,8 @@
 
       &:hover {
         transform: translateY(-12px) scale(1.05);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15),
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.15),
           0 0 0 1px rgba(153, 81, 224, 0.2);
       }
 
@@ -193,7 +196,8 @@
         );
         color: white;
         border-color: transparent;
-        box-shadow: 0 10px 30px rgba(153, 81, 224, 0.4),
+        box-shadow:
+          0 10px 30px rgba(153, 81, 224, 0.4),
           inset 0 1px 0 rgba(255, 255, 255, 0.2);
         transform: translateY(-3px);
       }
@@ -212,7 +216,8 @@
     background: var(--surface-color);
     border-radius: 24px;
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
@@ -225,7 +230,8 @@
 
     &:hover {
       transform: translateY(-15px) scale(1.02);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15),
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.15),
         0 0 0 1px rgba(153, 81, 224, 0.2);
     }
 
@@ -402,7 +408,8 @@
         font-weight: 700;
         font-size: 1rem;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 8px 25px rgba(153, 81, 224, 0.4),
+        box-shadow:
+          0 8px 25px rgba(153, 81, 224, 0.4),
           inset 0 1px 0 rgba(255, 255, 255, 0.2);
         position: relative;
         overflow: hidden;
@@ -425,7 +432,8 @@
 
         &:hover {
           transform: translateY(-3px);
-          box-shadow: 0 12px 35px rgba(153, 81, 224, 0.5),
+          box-shadow:
+            0 12px 35px rgba(153, 81, 224, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
           text-decoration: none;
           color: white;
@@ -472,11 +480,13 @@
 
       .cert-footer .cert-link {
         background: linear-gradient(45deg, #22c55e, #16a34a);
-        box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4),
+        box-shadow:
+          0 8px 25px rgba(34, 197, 94, 0.4),
           inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
         &:hover {
-          box-shadow: 0 12px 35px rgba(34, 197, 94, 0.5),
+          box-shadow:
+            0 12px 35px rgba(34, 197, 94, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
       }

@@ -25,17 +25,16 @@ export class ExperienceComponent implements OnInit {
       companyName: 'Satisfic',
       duration: 'July 2022 - Present',
       description:
-        'Results-driven Software Developer specializing in building scalable web applications with Angular and TypeScript. Consistently delivering high-performance solutions that optimize user workflows and drive business efficiency.',
+        'Results-oriented Software Developer with expertise in Angular and TypeScript, focused on delivering scalable, enterprise-grade applications that optimize workflows and improve operational efficiency.',
       details: [
-        'Architected a unified state management layer using NgRx to handle complex data flows across Sales, Marketing, and Analytics modules, ensuring predictable UI synchronization and easier debugging.',
-        'Engineered high-performance CRM data tables using PrimeNG, enabling complex inline editing, row expansion, frozen columns, and handling large datasets (10k+ records) with sub-second rendering.',
-        'Engineered intelligent "Lead Distribution" algorithms supporting "Round Robin", "Shark Tank", and Manual assignment modes, utilizing Email Notifications and efficient API polling strategies to ensure timely delivery of new leads to agents.',
-        'Developed a dynamic "Call Script" engine for Telemarketers featuring Script Listing Tables, interactive "Script Previews", and live "Execution Sessions" to record Q&A and Objections, which automates post-call Appointment Scheduling and Task Assignment based on specific Call Outcomes.',
-        'Built a comprehensive "Social Monitoring" suite with advanced Channel Tables and segmented Post Listing Pages (Draft, Scheduled, Published, Unpublished), enabling users to navigate to Post Details to manage Comments, Replies, and Reactions from a centralized hub.',
-        'Built interactive, real-time analytics dashboards using eCharts, empowering marketing teams with actionable insights and reducing manual reporting time by approximately 40%.',
-        'Designed and implemented a granular RBAC (Role-Based Access Control) system, allowing dynamic permission toggles across multiple modules, which significantly improved security compliance and admin efficiency.',
-        'Revamped the Keycloak authentication flow by designing custom themes for login, 2FA, and email templates, resulting in a cohesive brand experience and improved user retention.',
-        'Authored comprehensive internal developer guides and launch documentation using Docusaurus, streamlining the onboarding process for new team members and reducing ramp-up time by 50%.',
+        'Built high-performance CRM data tables using PrimeNG, supporting 10k+ records with inline editing, frozen columns, and dynamic templates to improve rendering efficiency.',
+        'Delivered a Call Script Execution module with interactive previews, live sessions, Q&A capture, automated post-call scheduling, and email-based appointment booking, boosting agent productivity.',
+        'Created a Social Monitoring dashboard with LinkedIn integration for centralized post management, real-time engagement tracking, and in-platform performance analytics, eliminating reliance on external tools.',
+        'Developed telemarketing analytics dashboards to track agent performance, rankings, campaign appointment rates, and call utilization, along with Call Manager & Agent Calling Window features for agent availability scheduling.',
+        'Developed reusable ECharts-based visualization components to display key metrics across multiple analytics dashboards, reducing manual reporting efforts by 40%.',
+        'Designed and implemented RBAC with dynamic permission controls, improving security compliance and administrative efficiency.',
+        'Enhanced Keycloak authentication with custom login, 2FA, and email templates for a consistent user experience.',
+        'Resolved critical production issues, refactored modules for scalability, and added Jest unit tests with internal documentation using Docusaurus, reducing onboarding time by 50%.',
       ],
     },
   ];
@@ -47,7 +46,7 @@ export class ExperienceComponent implements OnInit {
   get experienceStats() {
     const totalAchievements = this.experiences.reduce(
       (sum, exp) => sum + exp.details.length,
-      0
+      0,
     );
     const technologies = new Set([
       'Angular',
