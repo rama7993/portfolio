@@ -16,7 +16,7 @@ export class EducationComponent implements OnInit {
       icon: 'pi-graduation-cap',
       description:
         'Graduated with a comprehensive understanding of computer science principles, specializing in software development and problem-solving. Actively participated in technical projects and activities that enhanced both my academic knowledge and practical skills.',
-      CGPA: '9.06',
+      CGPA: '8.06',
       image: './assets/images/education/university.jpg',
       driveLink:
         'https://drive.google.com/file/d/1Hf6pt3gh1cPgDmhZ4WHa44js7f4DAuuV/view?usp=sharing',
