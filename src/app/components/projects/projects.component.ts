@@ -13,7 +13,14 @@ export class ProjectsComponent implements OnInit {
       imageUrl: './assets/images/projects/quick-chat.png',
       description:
         'Architected a scalable real-time messaging application using Socket.io and Node.js, capable of handling concurrent user connections with low-latency delivery. Implemented secure JWT authentication, mongo-persistent chat history, and optimized frontend rendering for instant message updates.',
-      techStack: ['Angular', 'Node.js', 'Express', 'MongoDB', 'Socket.io'],
+      techStack: [
+        'Angular 19',
+        'TypeScript',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Socket.io',
+      ],
       githubLink: 'https://github.com/rama7993/QuickChat-Frontend',
       link: 'https://quick-chat-fe.vercel.app/login',
       category: 'Full Stack',
@@ -21,29 +28,33 @@ export class ProjectsComponent implements OnInit {
       status: 'Live',
     },
     {
-      name: 'Sportify - Music Discovery Platform',
-      imageUrl: './assets/images/projects/sportify.png',
+      name: 'SocialSphere',
+      imageUrl: './assets/images/projects/social-sphere.png',
       description:
-        'Engineered a robust music discovery platform integrating the complex Spotify Web API. Implemented advanced features like token-based authentication, intelligent infinite scrolling for performance optimization, and a global audio player state managed via RxJS services.',
+        'Developed a full-stack social media platform using React and NestJS, featuring real-time feed synchronization via WebSockets and an automated story system with priority ordering. Implemented event-driven notifications for user interactions while ensuring a scalable architecture and modern responsive UI for an optimized user experience.',
       techStack: [
-        'Angular',
-        'Node.js',
-        'Express',
-        'MongoDB',
-        'Spotify Web API',
+        'React 18',
+        'TypeScript',
+        'NestJS',
+        'PostgreSQL',
+        'TypeORM',
+        'Zustand',
+        'TanStack Query',
+        'Tailwind CSS',
       ],
-      githubLink: 'https://github.com/rama7993/sportify',
-      link: 'https://sportify-rho.vercel.app/',
+      githubLink: 'https://github.com/rama7993/socialsphere-frontend    ',
+      link: 'https://socialsphere-frontend-mu.vercel.app/',
       category: 'Full Stack',
       featured: true,
       status: 'Live',
     },
+
     {
       name: 'Weatherhub - Advanced Weather Dashboard',
       imageUrl: './assets/images/projects/weather-hub.png',
       description:
         'Developed a high-performance weather dashboard visualizing complex meteorological data through interactive charts and maps. Utilized SCSS modules for a cohesive glassmorphism design system and optimized API calls for sub-second data rendering.',
-      techStack: ['Angular', 'TypeScript', 'SCSS', 'Weather API'],
+      techStack: ['Angular 17', 'TypeScript', 'SCSS', 'Weather API'],
       githubLink: 'https://github.com/rama7993/weather-hub',
       link: 'https://weather-hub-eight.vercel.app/',
       category: 'Frontend',
@@ -51,22 +62,10 @@ export class ProjectsComponent implements OnInit {
       status: 'Live',
     },
     {
-      name: 'News Hub',
-      imageUrl: './assets/images/projects/news-hub.png',
-      description:
-        'Built a responsive news aggregation engine that fetches and categorizes global news streams in real-time. Implemented efficient search algorithms and category filtering to deliver a seamless content consumption experience.',
-      techStack: ['Angular', 'SCSS', 'Bootstrap', 'GNews API'],
-      githubLink: 'https://github.com/rama7993/news-hub',
-      link: 'https://rama7993.github.io/news-hub/',
-      category: 'Frontend',
-      featured: false,
-      status: 'Live',
-    },
-    {
       name: 'Music Search',
       imageUrl: './assets/images/projects/music-search.png',
       description:
-        'A comprehensive music exploration interface built with Angular. focused on clean component architecture and efficient state management for handling large lists of tracks and albums.',
+        'A comprehensive music exploration interface built with Angular, focused on clean component architecture and efficient state management for handling large lists of tracks and albums.',
       techStack: ['Angular', 'Bootstrap', 'Spotify API'],
       githubLink: 'https://github.com/rama7993/music-search',
       link: 'https://rama7993.github.io/music-search/',
@@ -99,6 +98,36 @@ export class ProjectsComponent implements OnInit {
       status: 'Live',
     },
     {
+      name: 'News Hub',
+      imageUrl: './assets/images/projects/news-hub.png',
+      description:
+        'Built a responsive news aggregation engine that fetches and categorizes global news streams in real-time. (Note: A browser CORS extension is required to bypass API restrictions and view live news content).',
+      techStack: ['Angular', 'SCSS', 'Bootstrap', 'GNews API'],
+      githubLink: 'https://github.com/rama7993/news-hub',
+      link: 'https://rama7993.github.io/news-hub/',
+      category: 'Frontend',
+      featured: false,
+      status: 'Live',
+    },
+    {
+      name: 'Sportify - Music Discovery Platform',
+      imageUrl: './assets/images/projects/sportify.png',
+      description:
+        'Engineered a robust music discovery platform integrating the complex Spotify Web API. (Note: This project is currently deprecated due to recent changes in Spotify API access policies, which have restricted the real-time search and playback features).',
+      techStack: [
+        'Angular',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Spotify Web API',
+      ],
+      githubLink: 'https://github.com/rama7993/sportify',
+      link: 'https://sportify-rho.vercel.app/',
+      category: 'Full Stack',
+      featured: false,
+      status: 'Deprecated',
+    },
+    {
       name: 'SoftPhone – Web SIP & Video Calls',
       imageUrl: './assets/images/projects/soft-phone.png',
       description:
@@ -125,7 +154,7 @@ export class ProjectsComponent implements OnInit {
       return this.projects;
     }
     return this.projects.filter(
-      (project) => project.category === this.selectedCategory
+      (project) => project.category === this.selectedCategory,
     );
   }
 

@@ -75,6 +75,7 @@ $overlay-dark: rgba(124, 58, 237, 0.05);
   --primary-rgb: 124, 58, 237; // Violet-600
   --text-rgb: 15, 23, 42; // Slate-900
   --background-rgb: 248, 250, 252;
+  --surface-rgb: 255, 255, 255;
   --hero-bg: #0b1120; // Force dark hero in light mode for contrast
   --hero-text-color: #ffffff;
   --hero-text-color: #ffffff;
@@ -111,6 +112,7 @@ $overlay-dark: rgba(124, 58, 237, 0.05);
   --primary-rgb: 139, 92, 246; // Violet-500
   --text-rgb: 248, 250, 252; // Slate-50
   --background-rgb: 11, 17, 32;
+  --surface-rgb: 17, 24, 39;
   --hero-bg: #0b1120;
   --hero-text-color: var(--text-color);
   --hero-text-color: var(--text-color);

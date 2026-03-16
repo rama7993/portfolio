@@ -24,6 +24,7 @@
       <div
         *ngFor="let project of filteredProjects; let i = index"
         class="project-card"
+        [class.deprecated]="project.status === 'Deprecated'"
       >
         <div class="project-image-container">
           <img
@@ -54,7 +55,7 @@
           </div>
           <div class="project-links">
             <a [href]="project.link" target="_blank" class="btn btn-primary">
-              <i class="pi pi-external-link"></i> Live Demo
+              <i class="pi pi-external-link"></i> Visit Site
             </a>
             <a
               [href]="project.githubLink"

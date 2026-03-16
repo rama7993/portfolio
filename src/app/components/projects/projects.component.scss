@@ -260,6 +260,35 @@
         box-shadow: 0 20px 40px var(--shadow-color);
       }
 
+      &.deprecated {
+        opacity: 0.6;
+        filter: grayscale(80%);
+        cursor: not-allowed;
+        background: rgba(var(--surface-rgb), 0.5);
+
+        &:hover {
+          transform: none;
+          box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .project-image-container {
+          filter: grayscale(100%);
+        }
+
+        .project-status {
+          background: #f59e0b !important; // Amber color for deprecated
+          color: white !important;
+        }
+
+        .project-links .btn {
+          opacity: 0.8;
+          &:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+          }
+        }
+      }
+
       .project-image-container {
         position: relative;
         height: 200px;
@@ -365,7 +394,8 @@
           margin-bottom: 1rem;
           font-size: 0.9rem;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 6;
+          line-clamp: 6;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
