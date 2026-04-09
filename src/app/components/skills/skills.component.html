@@ -34,7 +34,7 @@
             <div class="expertise-content">
               <h4>Backend Development</h4>
               <p>
-                Proficient in Node.js, Java, Python, and database management
+                Proficient in Node.js, NestJS, Express, Java, and Python
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="expertise-content">
               <h4>Database Management</h4>
-              <p>Experience with MongoDB, MySQL, and data modeling</p>
+              <p>Experience with MongoDB, PostgreSQL, and MySQL</p>
             </div>
           </div>
         </div>
@@ -97,14 +97,19 @@
             class="skill-image-container"
             [style.background-color]="skill.color + '20'"
           >
-            <img [src]="skill.image" [alt]="skill.name" class="skill-image" />
+            <img
+              [src]="skill.image"
+              [alt]="skill.name"
+              class="skill-image"
+              [style.filter]="skill.name === 'Express' && isDarkMode ? 'invert(1) brightness(1.5)' : 'none'"
+            />
           </div>
           <div class="skill-info">
             <h4 class="skill-name">{{ skill.name }}</h4>
             <span
               class="skill-category"
-              [style.background-color]="skill.color + '20'"
-              [style.color]="skill.color"
+              [style.background-color]="(skill.name === 'Express' && isDarkMode ? '#ffffff' : skill.color) + '20'"
+              [style.color]="skill.name === 'Express' && isDarkMode ? '#ffffff' : skill.color"
               >{{ skill.category }}</span
             >
           </div>

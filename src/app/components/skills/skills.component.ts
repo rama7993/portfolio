@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { ModeToggleService } from '../../../services/mode-toggle/mode-toggle.service';
+import { Mode } from '../../../services/mode-toggle/mode-toggle.model';
 
 Chart.register(...registerables);
 
@@ -70,49 +72,70 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       name: 'NodeJs',
       image: './assets/skills/nodejs.svg',
-      level: 82,
+      level: 75,
       category: 'Backend',
       color: '#339933',
     },
     {
+      name: 'NestJs',
+      image: './assets/skills/nestjs.svg',
+      level: 72,
+      category: 'Backend',
+      color: '#E0234E',
+    },
+    {
+      name: 'Express',
+      image: './assets/skills/express.svg',
+      level: 70,
+      category: 'Backend',
+      color: '#000000',
+    },
+    {
       name: 'MongoDb',
       image: './assets/skills/mongodb.svg',
-      level: 80,
+      level: 75,
       category: 'Database',
       color: '#47A248',
     },
     {
       name: 'MySQL',
       image: './assets/skills/mysql.svg',
-      level: 75,
+      level: 70,
       category: 'Database',
       color: '#4479A1',
     },
     {
+      name: 'PostgreSQL',
+      image: './assets/skills/postgresql.svg',
+      level: 72,
+      category: 'Database',
+      color: '#336791',
+    },
+    {
       name: 'Java',
       image: './assets/skills/java.svg',
-      level: 60,
+      level: 65,
       category: 'Backend',
       color: '#007396',
     },
     {
       name: 'Python',
       image: './assets/skills/python.svg',
-      level: 55,
+      level: 62,
       category: 'Backend',
       color: '#3776AB',
     },
     {
       name: 'C++',
       image: './assets/skills/cpp.svg',
-      level: 50,
+      level: 60,
       category: 'Backend',
       color: '#00599C',
     },
     {
       name: 'C',
       image: './assets/skills/c.svg',
-      level: 40,
+      level: 60,
       category: 'Backend',
       color: '#A8B9CC',
     },
@@ -128,11 +151,20 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
   skillCategories = ['Frontend', 'Backend', 'Database', 'Tools'];
   selectedCategory = 'All';
   skillChart: Chart | null = null;
+  isDarkMode = false;
   private themeChangeListener?: () => void;
 
-  constructor() {}
+  constructor(private modeToggleService: ModeToggleService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.modeToggleService.modeChanged$.subscribe((mode: Mode) => {
+      this.isDarkMode = mode === Mode.DARK;
+      if (this.skillChart) {
+        this.skillChart.destroy();
+        setTimeout(() => this.createSkillChart(), 100);
+      }
+    });
+  }
 
   ngAfterViewInit() {
     this.createSkillChart();
@@ -149,25 +181,7 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private setupThemeListener() {
-    // Listen for theme changes
-    this.themeChangeListener = () => {
-      if (this.skillChart) {
-        this.skillChart.destroy();
-        setTimeout(() => this.createSkillChart(), 100);
-      }
-    };
-
-    // Listen for class changes on document element
-    const observer = new MutationObserver(this.themeChangeListener);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    // Store the cleanup function
-    this.themeChangeListener = () => {
-      observer.disconnect();
-    };
+    // Relying on ModeToggleService in ngOnInit
   }
 
   filterSkills(category: string) {
@@ -192,9 +206,7 @@ export class SkillsComponent implements OnInit, AfterViewInit, OnDestroy {
     const databaseSkills = this.skills.filter((s) => s.category === 'Database');
 
     // Get theme-aware colors
-    const isDarkMode =
-      document.documentElement.classList.contains('dark-theme') ||
-      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDarkMode = this.isDarkMode;
     const textColor = isDarkMode ? '#e6e6e6' : '#6c757d'; // Muted text only in light mode
 
     this.skillChart = new Chart(ctx, {

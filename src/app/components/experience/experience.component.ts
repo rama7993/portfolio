@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit {
       companyName: 'Satisfic',
       duration: 'July 2022 - Present',
       description:
-        'Results-oriented Software Developer with expertise in Angular and TypeScript, focused on delivering scalable, enterprise-grade applications that optimize workflows and improve operational efficiency.',
+        'Dynamic Software Engineer architecting high-performance enterprise applications. Expert in Angular and the modern web stack, I specialize in building scalable, secure, and intuitive solutions that optimize complex business workflows.',
       details: [
         'Built high-performance CRM data tables using PrimeNG, supporting 10k+ records with inline editing, frozen columns, and dynamic templates to improve rendering efficiency.',
         'Delivered a Call Script Execution module with interactive previews, live sessions, Q&A capture, automated post-call scheduling, and email-based appointment booking, boosting agent productivity.',
